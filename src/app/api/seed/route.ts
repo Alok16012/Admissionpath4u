@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 
+export const dynamic = "force-dynamic";
+
 function slug(name: string) {
   return name.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, "");
 }
