@@ -28,13 +28,7 @@ export function HeroEditor({ initialSettings }: HeroEditorProps) {
       "Explore thousands of colleges, courses, and scholarships to kickstart your career."
   );
   const [heroImages, setHeroImages] = useState<string[]>(
-    initialSettings?.heroImages?.length
-      ? initialSettings.heroImages
-      : [
-          "https://res.cloudinary.com/dmwvniqxk/image/upload/v1768728501/Cambridge_ldhocb.jpg",
-          "https://res.cloudinary.com/dmwvniqxk/image/upload/v1768728657/iitd_u9yyi5.jpg",
-          "https://res.cloudinary.com/dmwvniqxk/image/upload/v1768728721/oxford_aansre.jpg",
-        ]
+    initialSettings?.heroImages || []
   );
 
   const fileInputRef = useRef<HTMLInputElement>(null);
