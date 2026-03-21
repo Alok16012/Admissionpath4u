@@ -10,6 +10,10 @@ import {
   LogOut,
   FileText,
   BookOpen,
+  Briefcase,
+  GraduationCap,
+  Info,
+  Home,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
@@ -22,9 +26,13 @@ export function AdminSidebar({ className }: SidebarProps) {
 
   const links = [
     { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
+    { href: "/admin/homepage", label: "Homepage", icon: Home },
     { href: "/admin/colleges", label: "Colleges", icon: School },
+    { href: "/admin/courses", label: "Courses", icon: GraduationCap },
     { href: "/admin/exams", label: "Exams", icon: FileText },
     { href: "/admin/blogs", label: "Blogs", icon: BookOpen },
+    { href: "/admin/services", label: "Services", icon: Briefcase },
+    { href: "/admin/about", label: "About Us", icon: Info },
     { href: "/admin/leads", label: "Leads", icon: Users },
   ];
 

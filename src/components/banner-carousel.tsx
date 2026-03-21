@@ -5,13 +5,14 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const images = [
+const DEFAULT_IMAGES = [
   "https://res.cloudinary.com/dmwvniqxk/image/upload/v1768728501/Cambridge_ldhocb.jpg",
   "https://res.cloudinary.com/dmwvniqxk/image/upload/v1768728657/iitd_u9yyi5.jpg",
   "https://res.cloudinary.com/dmwvniqxk/image/upload/v1768728721/oxford_aansre.jpg",
 ];
 
-export function BannerCarousel() {
+export function BannerCarousel({ images: propImages }: { images?: string[] }) {
+  const images = propImages && propImages.length > 0 ? propImages : DEFAULT_IMAGES;
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {

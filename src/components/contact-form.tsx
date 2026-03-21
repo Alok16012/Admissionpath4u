@@ -8,7 +8,7 @@ import { createLead } from "@/app/actions/public";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 
-export function ContactForm({ defaultCourse }: { defaultCourse?: string }) {
+export function ContactForm({ defaultCourse, source }: { defaultCourse?: string; source?: string }) {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
@@ -148,6 +148,7 @@ export function ContactForm({ defaultCourse }: { defaultCourse?: string }) {
       {defaultCourse && (
         <input type="hidden" name="interestedCourse" value={defaultCourse} />
       )}
+      <input type="hidden" name="source" value={source || "Contact Page"} />
     </form>
   );
 }

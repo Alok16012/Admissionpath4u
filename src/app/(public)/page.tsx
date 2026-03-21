@@ -4,7 +4,9 @@ import {
   getTopColleges,
   getRecentExams,
   getRecentBlogs,
+  getServices,
 } from "@/app/actions/public";
+import { getSiteSettings } from "@/app/actions/settings";
 import { CollegeCard } from "@/components/college-card";
 import { ExamCard } from "@/components/exam-card";
 import { BlogCard } from "@/components/blog-card";
@@ -16,25 +18,28 @@ import { ServicesSection } from "@/components/services-section";
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const topColleges = await getTopColleges();
-  const recentExams = await getRecentExams();
-  const recentBlogs = await getRecentBlogs();
-  const courses = await getUniqueCourses();
+  const [topColleges, recentExams, recentBlogs, courses, services, settings] = await Promise.all([
+    getTopColleges(),
+    getRecentExams(),
+    getRecentBlogs(),
+    getUniqueCourses(),
+    getServices(),
+    getSiteSettings(),
+  ]);
 
   return (
     <div className="flex flex-col min-h-screen">
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         {/* Carousel Background */}
-        <BannerCarousel />
+        <BannerCarousel images={settings?.heroImages} />
 
         {/* Content Overlay */}
         <div className="container relative z-10 px-4 md:px-6 text-center text-white">
           <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl drop-shadow-md">
-            Find Your Dream College
+            {settings?.heroTitle || "Find Your Dream College"}
           </h1>
           <p className="mx-auto mt-4 max-w-[700px] text-lg text-gray-100 drop-shadow-sm font-medium">
-            Explore thousands of colleges, courses, and scholarships to
-            kickstart your career.
+            {settings?.heroSubtitle || "Explore thousands of colleges, courses, and scholarships to kickstart your career."}
           </p>
           <div className="mt-8 flex justify-center max-w-sm mx-auto space-x-2">
             <Button
@@ -50,7 +55,7 @@ export default async function HomePage() {
 
       <CourseFilterSection courses={courses} />
 
-      <ServicesSection />
+      <ServicesSection services={services} />
 
       {/* State Filter Section Removed as per user request flow, but available in codebase if needed. 
           Actually user didn't ask to remove it, but user prompt "Next section should look like..." implied linear flow.

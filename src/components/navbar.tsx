@@ -8,7 +8,7 @@ import {
   Facebook,
   Instagram,
   Youtube,
-  Send, // for Telegram mostly
+  Globe,
   Settings,
   GraduationCap, // for B.Tech/MBBS
   Briefcase, // for MBA
@@ -62,10 +62,10 @@ export function Navbar() {
               Blogs
             </Link>
             <Link
-              href="/contact"
+              href="/services"
               className="hover:text-yellow-400 uppercase font-medium"
             >
-              Application Process
+              Services
             </Link>
           </nav>
 
@@ -88,17 +88,17 @@ export function Navbar() {
             </div>
 
             <div className="flex items-center space-x-3">
-              <Link href="#" className="hover:opacity-80">
+              <Link href="https://www.facebook.com/profile.php?id=61587842248462" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
                 <Facebook className="h-4 w-4 md:h-5 md:w-5 bg-white text-[#800000] rounded-full p-0.5" />
               </Link>
-              <Link href="#" className="hover:opacity-80">
+              <Link href="https://www.instagram.com/admissionpath4u/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
                 <Instagram className="h-4 w-4 md:h-5 md:w-5 bg-white text-[#800000] rounded-full p-0.5" />
               </Link>
-              <Link href="#" className="hover:opacity-80">
+              <Link href="https://www.youtube.com/channel/UCvIQzIgTENnGijRQWTReqTg" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
                 <Youtube className="h-4 w-4 md:h-5 md:w-5 bg-white text-[#800000] rounded-full p-0.5" />
               </Link>
-              <Link href="#" className="hover:opacity-80">
-                <Send className="h-4 w-4 md:h-5 md:w-5 bg-white text-[#800000] rounded-full p-0.5" />
+              <Link href="https://share.google/qQ63bbfFnHXiOOn4N" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
+                <Globe className="h-4 w-4 md:h-5 md:w-5 bg-white text-[#800000] rounded-full p-0.5" />
               </Link>
             </div>
           </div>
@@ -123,42 +123,42 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8 text-gray-700 font-medium text-sm">
             <Link
-              href="/colleges?course=B.Tech"
+              href="/courses/btech"
               className="flex items-center gap-1 hover:text-[#800000] transition-colors"
             >
               <Settings className="w-4 h-4 text-[#800000]" />
               <span>B.TECH</span>
             </Link>
             <Link
-              href="/colleges?course=MBBS"
+              href="/courses/mbbs"
               className="flex items-center gap-1 hover:text-[#800000] transition-colors"
             >
               <GraduationCap className="w-4 h-4 text-[#800000]" />
               <span>MBBS</span>
             </Link>
             <Link
-              href="/colleges?course=MBA"
+              href="/courses/mba"
               className="flex items-center gap-1 hover:text-[#800000] transition-colors"
             >
               <Briefcase className="w-4 h-4 text-[#800000]" />
               <span>MBA</span>
             </Link>
             <Link
-              href="/colleges?course=Design"
+              href="/courses/design"
               className="flex items-center gap-1 hover:text-[#800000] transition-colors"
             >
               <Palette className="w-4 h-4 text-[#800000]" />
               <span>DESIGN</span>
             </Link>
             <Link
-              href="/colleges?course=Law"
+              href="/courses/law"
               className="flex items-center gap-1 hover:text-[#800000] transition-colors"
             >
               <Gavel className="w-4 h-4 text-[#800000]" />
               <span>LAW</span>
             </Link>
             <Link
-              href="/colleges?course=Abroad%20MBBS"
+              href="/courses/abroad-mbbs"
               className="flex items-center gap-1 hover:text-[#800000] transition-colors"
             >
               <Plane className="w-4 h-4 text-[#800000]" />
@@ -195,34 +195,40 @@ export function Navbar() {
                   </MobileLink>
                   <div className="h-px bg-gray-200 my-2" />
                   <MobileLink
-                    href="/colleges?course=B.Tech"
+                    href="/courses/btech"
                     onClick={() => setIsOpen(false)}
                   >
                     B.Tech
                   </MobileLink>
                   <MobileLink
-                    href="/colleges?course=MBBS"
+                    href="/courses/mbbs"
                     onClick={() => setIsOpen(false)}
                   >
                     MBBS
                   </MobileLink>
                   <MobileLink
-                    href="/colleges?course=MBA"
+                    href="/courses/mba"
                     onClick={() => setIsOpen(false)}
                   >
                     MBA
                   </MobileLink>
                   <MobileLink
-                    href="/colleges?course=Design"
+                    href="/courses/design"
                     onClick={() => setIsOpen(false)}
                   >
                     Design
                   </MobileLink>
                   <MobileLink
-                    href="/colleges?course=Law"
+                    href="/courses/law"
                     onClick={() => setIsOpen(false)}
                   >
                     Law
+                  </MobileLink>
+                  <MobileLink
+                    href="/courses/abroad-mbbs"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Abroad MBBS
                   </MobileLink>
                   <div className="h-px bg-gray-200 my-2" />
                   <Button

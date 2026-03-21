@@ -86,9 +86,9 @@ export function CollegeForm({ college, onSuccess }: CollegeFormProps) {
       }
 
       onSuccess();
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
-      alert("Something went wrong");
+      alert(error.message || "Something went wrong");
     } finally {
       setLoading(false);
     }

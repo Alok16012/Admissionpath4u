@@ -1,18 +1,25 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import dbConnect from "@/lib/db";
-import College from "@/models/College";
-import Lead from "@/models/Lead";
+import { supabase } from "@/lib/supabase";
 import { School, Users, UserPlus } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
 async function getStats() {
-  await dbConnect();
-  const collegeCount = await College.countDocuments();
-  const leadCount = await Lead.countDocuments();
-  const newLeadsCount = await Lead.countDocuments({ status: "new" });
+  const [
+    { count: collegeCount },
+    { count: leadCount },
+    { count: newLeadsCount },
+  ] = await Promise.all([
+    supabase.from('colleges').select('*', { count: 'exact', head: true }),
+    supabase.from('leads').select('*', { count: 'exact', head: true }),
+    supabase.from('leads').select('*', { count: 'exact', head: true }).eq('status', 'new'),
+  ]);
 
-  return { collegeCount, leadCount, newLeadsCount };
+  return {
+    collegeCount: collegeCount ?? 0,
+    leadCount: leadCount ?? 0,
+    newLeadsCount: newLeadsCount ?? 0,
+  };
 }
 
 export default async function AdminDashboardPage() {

@@ -1,13 +1,14 @@
-import dbConnect from "@/lib/db";
-import Lead from "@/models/Lead";
+import { supabase, toLead } from "@/lib/supabase";
 import { LeadManager } from "./lead-manager";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminLeadsPage() {
-  await dbConnect();
-  const leads = await Lead.find({}).sort({ createdAt: -1 });
-  const serializedLeads = JSON.parse(JSON.stringify(leads));
+  const { data } = await supabase
+    .from('leads')
+    .select('*')
+    .order('created_at', { ascending: false });
 
-  return <LeadManager initialLeads={serializedLeads} />;
+  const leads = (data || []).map(toLead);
+  return <LeadManager initialLeads={leads} />;
 }

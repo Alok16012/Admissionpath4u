@@ -1,186 +1,202 @@
 'use server';
 
-import dbConnect from '@/lib/db';
-import College from '@/models/College';
-import Exam from '@/models/Exam';
-import Blog from '@/models/Blog';
-import Lead from '@/models/Lead';
+import { supabase, toCollege, toExam, toBlog, toService } from '@/lib/supabase';
 
 export async function getBlogs(searchParams: { [key: string]: string | string[] | undefined }) {
-    await dbConnect();
     const page = typeof searchParams.page === 'string' ? parseInt(searchParams.page) : 1;
     const limit = 9;
-    const skip = (page - 1) * limit;
+    const from = (page - 1) * limit;
+    const to = from + limit - 1;
 
-    const query: any = {};
+    let query = supabase.from('blogs').select('*', { count: 'exact' });
     if (searchParams.search) {
-        query.title = { $regex: searchParams.search as string, $options: 'i' };
+        query = query.ilike('title', `%${searchParams.search as string}%`);
     }
 
-    const blogs = await Blog.find(query)
-        .sort({ createdAt: -1 })
-        .skip(skip)
-        .limit(limit);
+    const { data, error, count } = await query
+        .order('created_at', { ascending: false })
+        .range(from, to);
 
-    const total = await Blog.countDocuments(query);
-
+    if (error) return { blogs: [], totalPages: 0, currentPage: page };
     return {
-        blogs: JSON.parse(JSON.stringify(blogs)),
-        totalPages: Math.ceil(total / limit),
+        blogs: (data || []).map(toBlog),
+        totalPages: Math.ceil((count || 0) / limit),
         currentPage: page,
     };
 }
 
 export async function getBlogBySlug(slug: string) {
-    await dbConnect();
-    const blog = await Blog.findOne({ slug });
-    if (!blog) return null;
-    return JSON.parse(JSON.stringify(blog));
+    const { data, error } = await supabase.from('blogs').select('*').eq('slug', slug).single();
+    if (error || !data) return null;
+    return toBlog(data);
 }
 
-
 export async function getExams(searchParams: { [key: string]: string | string[] | undefined }) {
-    await dbConnect();
     const page = typeof searchParams.page === 'string' ? parseInt(searchParams.page) : 1;
     const limit = 9;
-    const skip = (page - 1) * limit;
+    const from = (page - 1) * limit;
+    const to = from + limit - 1;
 
-    const query: any = {};
+    let query = supabase.from('exams').select('*', { count: 'exact' });
     if (searchParams.search) {
-        query.name = { $regex: searchParams.search as string, $options: 'i' };
+        query = query.ilike('name', `%${searchParams.search as string}%`);
     }
 
-    const exams = await Exam.find(query)
-        .sort({ date: 1 })
-        .skip(skip)
-        .limit(limit);
+    const { data, error, count } = await query
+        .order('date', { ascending: true })
+        .range(from, to);
 
-    const total = await Exam.countDocuments(query);
-
+    if (error) return { exams: [], totalPages: 0, currentPage: page };
     return {
-        exams: JSON.parse(JSON.stringify(exams)),
-        totalPages: Math.ceil(total / limit),
+        exams: (data || []).map(toExam),
+        totalPages: Math.ceil((count || 0) / limit),
         currentPage: page,
     };
 }
 
 export async function getExamBySlug(slug: string) {
-    await dbConnect();
-    const exam = await Exam.findOne({ slug });
-    if (!exam) return null;
-    return JSON.parse(JSON.stringify(exam));
+    const { data, error } = await supabase.from('exams').select('*').eq('slug', slug).single();
+    if (error || !data) return null;
+    return toExam(data);
 }
 
-
 export async function getColleges(searchParams: { [key: string]: string | string[] | undefined }) {
-    await dbConnect();
-
     const page = typeof searchParams.page === 'string' ? parseInt(searchParams.page) : 1;
     const limit = 9;
-    const skip = (page - 1) * limit;
+    const from = (page - 1) * limit;
+    const to = from + limit - 1;
 
-    const query: any = {};
+    let query = supabase.from('colleges').select('*', { count: 'exact' });
 
     if (searchParams.state) {
-        query.state = { $regex: searchParams.state as string, $options: 'i' };
+        query = query.ilike('state', `%${searchParams.state as string}%`);
     }
     if (searchParams.city) {
-        query.city = { $regex: searchParams.city as string, $options: 'i' };
+        query = query.ilike('city', `%${searchParams.city as string}%`);
     }
     if (searchParams.course) {
-        query.courses = { $regex: searchParams.course as string, $options: 'i' };
+        // colleges.courses is a text[] — check if array contains the value
+        query = query.contains('courses', [searchParams.course as string]);
     }
     if (searchParams.search) {
-        query.name = { $regex: searchParams.search as string, $options: 'i' };
+        query = query.ilike('name', `%${searchParams.search as string}%`);
     }
 
-    const colleges = await College.find(query)
-        .sort({ createdAt: -1 })
-        .skip(skip)
-        .limit(limit);
+    const { data, error, count } = await query
+        .order('created_at', { ascending: false })
+        .range(from, to);
 
-    const total = await College.countDocuments(query);
-
+    if (error) return { colleges: [], totalPages: 0, currentPage: page };
     return {
-        colleges: JSON.parse(JSON.stringify(colleges)),
-        totalPages: Math.ceil(total / limit),
+        colleges: (data || []).map(toCollege),
+        totalPages: Math.ceil((count || 0) / limit),
         currentPage: page,
     };
 }
 
 export async function getCollegeBySlug(slug: string) {
-    await dbConnect();
-    const college = await College.findOne({ slug });
-    if (!college) return null;
-    return JSON.parse(JSON.stringify(college));
+    const { data, error } = await supabase.from('colleges').select('*').eq('slug', slug).single();
+    if (error || !data) return null;
+    return toCollege(data);
 }
 
 export async function getFeaturedColleges() {
-    await dbConnect();
-    // For now, just return latest 6
-    const colleges = await College.find({}).sort({ createdAt: -1 }).limit(6);
-    return JSON.parse(JSON.stringify(colleges));
+    const { data, error } = await supabase
+        .from('colleges')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(6);
+    if (error) return [];
+    return (data || []).map(toCollege);
 }
 
 export async function getTopColleges() {
-    await dbConnect();
-    // Sort by highestPackage desc, limit to 3
-    const colleges = await College.find({}).sort({ highestPackage: -1 }).limit(3);
-    return JSON.parse(JSON.stringify(colleges));
+    const { data, error } = await supabase
+        .from('colleges')
+        .select('*')
+        .order('highest_package', { ascending: false })
+        .limit(3);
+    if (error) return [];
+    return (data || []).map(toCollege);
 }
 
 export async function getRecentExams() {
-    await dbConnect();
-    // Upcoming exams (date >= now), sort by date asc, limit 3
-    // For simplicity, just showing latest created or nearest date
-    const exams = await Exam.find({}).sort({ date: 1 }).limit(3);
-    return JSON.parse(JSON.stringify(exams));
+    const { data, error } = await supabase
+        .from('exams')
+        .select('*')
+        .order('date', { ascending: true })
+        .limit(3);
+    if (error) return [];
+    return (data || []).map(toExam);
 }
 
 export async function getRecentBlogs() {
-    await dbConnect();
-    // Sort by createdAt desc, limit 3
-    const blogs = await Blog.find({}).sort({ createdAt: -1 }).limit(3);
-    return JSON.parse(JSON.stringify(blogs));
+    const { data, error } = await supabase
+        .from('blogs')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(3);
+    if (error) return [];
+    return (data || []).map(toBlog);
 }
 
 export async function getUniqueCourses() {
-    await dbConnect();
-    // Aggregation to get unique courses
-    const courses = await College.distinct("courses");
-    return courses.sort(); // Sort alphabetically
+    const { data, error } = await supabase.from('colleges').select('courses');
+    if (error || !data) return [];
+    const allCourses = data.flatMap((row: any) => row.courses || []);
+    return [...new Set(allCourses)].sort();
+}
+
+export async function getServices() {
+    const { data, error } = await supabase
+        .from('services')
+        .select('*')
+        .eq('is_active', true)
+        .order('order', { ascending: true })
+        .order('created_at', { ascending: false });
+    if (error) return [];
+    return (data || []).map(toService);
+}
+
+export async function getServiceBySlug(slug: string) {
+    const { data, error } = await supabase
+        .from('services')
+        .select('*')
+        .eq('slug', slug)
+        .eq('is_active', true)
+        .single();
+    if (error || !data) return null;
+    return toService(data);
 }
 
 export async function createLead(formData: FormData) {
-    await dbConnect();
-
-    // Extract data
     const firstName = formData.get('firstName') as string;
     const lastName = formData.get('lastName') as string;
     const email = formData.get('email') as string;
     const phone = formData.get('mobile') as string;
     const message = formData.get('message') as string;
+    const source = (formData.get('source') as string) || 'Contact Page';
+    const interestedCourse = (formData.get('interestedCourse') as string) || 'General';
 
-    // Combine names
     const name = `${firstName} ${lastName}`.trim();
 
-    // Validations (Basic)
     if (!firstName || !email || !phone) {
-        return { success: false, error: "Name, Email and Phone are required" };
+        return { success: false, error: 'Name, Email and Phone are required' };
     }
 
-    try {
-        await Lead.create({
-            name,
-            email,
-            phone,
-            message,
-            state: 'General', // Default since not in form
-            interestedCourse: 'General' // Default since not in form
-        });
-        return { success: true };
-    } catch (error) {
-        console.error("Error creating lead:", error);
-        return { success: false, error: "Failed to submit form" };
+    const { error } = await supabase.from('leads').insert({
+        name,
+        email,
+        phone,
+        message,
+        state: 'General',
+        interested_course: interestedCourse,
+        source,
+    });
+
+    if (error) {
+        console.error('Error creating lead:', error);
+        return { success: false, error: 'Failed to submit form' };
     }
+    return { success: true };
 }

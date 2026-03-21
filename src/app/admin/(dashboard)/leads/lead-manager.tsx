@@ -29,22 +29,20 @@ export function LeadManager({ initialLeads }: { initialLeads: any[] }) {
     await updateLeadStatus(id, newStatus);
   };
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "new":
-        return "bg-blue-500";
-      case "contacted":
-        return "bg-yellow-500";
-      case "enrolled":
-        return "bg-green-500";
-      default:
-        return "bg-gray-500";
-    }
+  const getSourceColor = (source: string) => {
+    if (!source || source === "Contact Page") return "bg-gray-100 text-gray-700";
+    if (source.startsWith("College Page")) return "bg-blue-100 text-blue-700";
+    if (source.startsWith("Course Page")) return "bg-purple-100 text-purple-700";
+    if (source.startsWith("Service Page")) return "bg-orange-100 text-orange-700";
+    return "bg-green-100 text-green-700";
   };
 
   return (
     <div className="space-y-4">
-      <h2 className="text-3xl font-bold tracking-tight">Leads</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-3xl font-bold tracking-tight">Leads</h2>
+        <span className="text-sm text-muted-foreground">{initialLeads.length} total leads</span>
+      </div>
       <div className="border rounded-md bg-white dark:bg-gray-800">
         <Table>
           <TableHeader>
@@ -54,26 +52,34 @@ export function LeadManager({ initialLeads }: { initialLeads: any[] }) {
               <TableHead>Email</TableHead>
               <TableHead>Phone</TableHead>
               <TableHead>Course</TableHead>
+              <TableHead>Source</TableHead>
               <TableHead>Status</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {initialLeads.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} className="text-center py-10">
+                <TableCell colSpan={7} className="text-center py-10 text-muted-foreground">
                   No leads yet.
                 </TableCell>
               </TableRow>
             ) : (
               initialLeads.map((lead) => (
                 <TableRow key={lead._id}>
-                  <TableCell>
-                    {new Date(lead.createdAt).toLocaleDateString()}
+                  <TableCell className="text-sm text-muted-foreground whitespace-nowrap">
+                    {new Date(lead.createdAt).toLocaleDateString("en-IN", {
+                      day: "2-digit", month: "short", year: "numeric"
+                    })}
                   </TableCell>
                   <TableCell className="font-medium">{lead.name}</TableCell>
-                  <TableCell>{lead.email}</TableCell>
-                  <TableCell>{lead.phone}</TableCell>
-                  <TableCell>{lead.interestedCourse}</TableCell>
+                  <TableCell className="text-sm">{lead.email}</TableCell>
+                  <TableCell className="text-sm">{lead.phone}</TableCell>
+                  <TableCell className="text-sm">{lead.interestedCourse || "—"}</TableCell>
+                  <TableCell>
+                    <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${getSourceColor(lead.source)}`}>
+                      {lead.source || "Contact Page"}
+                    </span>
+                  </TableCell>
                   <TableCell>
                     <Select
                       defaultValue={lead.status}

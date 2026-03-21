@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const MONGODB_URI = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
-    throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
+    console.warn('WARNING: MONGODB_URI is not defined. Database features will not work.');
+    mongoose.set('bufferCommands', false);
 }
 
 interface MongooseCache {
@@ -23,6 +24,9 @@ async function dbConnect() {
     }
 
     if (!cached.promise) {
+        if (!MONGODB_URI) {
+            return null;
+        }
         const opts = {
             bufferCommands: false,
         };

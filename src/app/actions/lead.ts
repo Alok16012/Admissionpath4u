@@ -1,10 +1,9 @@
 'use server';
-import dbConnect from '@/lib/db';
-import Lead from '@/models/Lead';
+
+import { supabase } from '@/lib/supabase';
 import { revalidatePath } from 'next/cache';
 
 export async function updateLeadStatus(id: string, status: string) {
-    await dbConnect();
-    await Lead.findByIdAndUpdate(id, { status });
+    await supabase.from('leads').update({ status }).eq('id', id);
     revalidatePath('/admin/leads');
 }

@@ -1,13 +1,14 @@
-import dbConnect from "@/lib/db";
-import Blog from "@/models/Blog";
+import { supabase, toBlog } from "@/lib/supabase";
 import { BlogManager } from "./blog-manager";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminBlogsPage() {
-  await dbConnect();
-  const blogs = await Blog.find({}).sort({ createdAt: -1 });
-  const serializedBlogs = JSON.parse(JSON.stringify(blogs));
+  const { data } = await supabase
+    .from('blogs')
+    .select('*')
+    .order('created_at', { ascending: false });
 
-  return <BlogManager initialBlogs={serializedBlogs} />;
+  const blogs = (data || []).map(toBlog);
+  return <BlogManager initialBlogs={blogs} />;
 }

@@ -38,7 +38,7 @@ export function ContactDialog({
             counselors.
           </DialogDescription>
         </DialogHeader>
-        <ContactForm defaultCourse={defaultCourse} />
+        <ContactForm defaultCourse={defaultCourse} source={`College Page - ${collegeName}`} />
       </DialogContent>
     </Dialog>
   );

@@ -7,6 +7,7 @@ export interface ILead extends Document {
     state: string;
     interestedCourse: string;
     message?: string;
+    source?: string;
     status: 'new' | 'contacted' | 'enrolled';
     createdAt: Date;
 }
@@ -15,9 +16,10 @@ const LeadSchema: Schema = new Schema({
     name: { type: String, required: true },
     email: { type: String, required: true },
     phone: { type: String, required: true },
-    state: { type: String }, // Optional for general contact
-    interestedCourse: { type: String }, // Optional for general contact
+    state: { type: String },
+    interestedCourse: { type: String },
     message: { type: String },
+    source: { type: String, default: 'Contact Page' },
     status: { type: String, enum: ['new', 'contacted', 'enrolled'], default: 'new' },
 }, { timestamps: true });
 

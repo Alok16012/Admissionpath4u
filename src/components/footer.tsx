@@ -6,12 +6,10 @@ import {
   Facebook,
   Instagram,
   Youtube,
-  Linkedin,
-  Twitter,
+  Globe,
   MapPin,
   Phone,
   Mail,
-  Send,
 } from "lucide-react";
 
 export function Footer() {
@@ -33,11 +31,10 @@ export function Footer() {
               tailored to your career goals.
             </p>
             <div className="flex space-x-4">
-              <SocialLink href="#" icon={Facebook} />
-              <SocialLink href="#" icon={Instagram} />
-              <SocialLink href="#" icon={Twitter} />
-              <SocialLink href="#" icon={Linkedin} />
-              <SocialLink href="#" icon={Youtube} />
+              <SocialLink href="https://www.facebook.com/profile.php?id=61587842248462" icon={Facebook} label="Facebook" />
+              <SocialLink href="https://www.instagram.com/admissionpath4u/" icon={Instagram} label="Instagram" />
+              <SocialLink href="https://www.youtube.com/channel/UCvIQzIgTENnGijRQWTReqTg" icon={Youtube} label="YouTube" />
+              <SocialLink href="https://share.google/qQ63bbfFnHXiOOn4N" icon={Globe} label="Google My Business" />
             </div>
           </div>
 
@@ -50,6 +47,7 @@ export function Footer() {
               <FooterLink href="/colleges">Colleges</FooterLink>
               <FooterLink href="/exams">Exams</FooterLink>
               <FooterLink href="/blogs">Blogs</FooterLink>
+              <FooterLink href="/services">Our Services</FooterLink>
               <FooterLink href="/contact">Contact Us</FooterLink>
             </ul>
           </div>
@@ -60,18 +58,12 @@ export function Footer() {
               Popular Courses
             </h4>
             <ul className="space-y-3 text-sm">
-              <FooterLink href="/colleges?course=B.Tech">
-                B.Tech Engineering
-              </FooterLink>
-              <FooterLink href="/colleges?course=MBA">MBA / PGDM</FooterLink>
-              <FooterLink href="/colleges?course=MBBS">MBBS Medical</FooterLink>
-              <FooterLink href="/colleges?course=BBA">
-                BBA Management
-              </FooterLink>
-              <FooterLink href="/colleges?course=Law">Law (LLB/LLM)</FooterLink>
-              <FooterLink href="/colleges?course=Design">
-                Design & Fashion
-              </FooterLink>
+              <FooterLink href="/courses/btech">B.Tech Engineering</FooterLink>
+              <FooterLink href="/courses/mba">MBA / PGDM</FooterLink>
+              <FooterLink href="/courses/mbbs">MBBS Medical</FooterLink>
+              <FooterLink href="/courses/design">Design & Fashion</FooterLink>
+              <FooterLink href="/courses/law">Law (LLB / LLM)</FooterLink>
+              <FooterLink href="/courses/abroad-mbbs">Abroad MBBS</FooterLink>
             </ul>
           </div>
 
@@ -103,7 +95,18 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="bg-black py-6 border-t border-zinc-900">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <p>© 2024 AdmissionPath4u. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} AdmissionPath4u. All rights reserved.</p>
+          <p>
+            Developed by{" "}
+            <Link
+              href="https://blinks-ai.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-400 hover:text-white transition-colors"
+            >
+              Blinks AI
+            </Link>
+          </p>
           <div className="flex space-x-6">
             <Link
               href="/privacy"
@@ -121,10 +124,13 @@ export function Footer() {
   );
 }
 
-function SocialLink({ href, icon: Icon }: { href: string; icon: any }) {
+function SocialLink({ href, icon: Icon, label }: { href: string; icon: any; label?: string }) {
   return (
     <Link
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
       className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-[#800000] hover:text-white hover:border-[#800000] transition-all duration-300"
     >
       <Icon className="w-4 h-4" />
