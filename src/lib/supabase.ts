@@ -1,14 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = 'https://ccfzkjaaosyfxzxbpvsi.supabase.co';
-const supabaseServiceKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNjZnpramFhb3N5Znh6eGJwdnNpIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NDA3OTE0OSwiZXhwIjoyMDg5NjU1MTQ5fQ.LuyTYRYfMdqpgdNlveEqAAq97CAmJjJUUKzxI7t88qI';
-
-if (!supabaseUrl || !supabaseServiceKey) {
-  console.error('Supabase configuration missing in environment variables:', {
-    hasUrl: !!supabaseUrl,
-    hasKey: !!supabaseServiceKey,
-  });
-}
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 
 // Singleton for server-side use (service role — full access, no RLS)
 export const supabase = createClient(supabaseUrl, supabaseServiceKey, {
