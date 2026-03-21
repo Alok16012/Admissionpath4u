@@ -40,8 +40,12 @@ export function HeroEditor({ initialSettings }: HeroEditorProps) {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const url = await uploadImage(formData);
-      setHeroImages((prev) => [...prev, url]);
+      const result = await uploadImage(formData);
+      if (result.error) {
+        alert("Upload failed: " + result.error);
+      } else if (result.url) {
+        setHeroImages((prev) => [...prev, result.url!]);
+      }
     } catch (err: any) {
       alert("Upload failed: " + err.message);
     } finally {

@@ -93,7 +93,9 @@ export function ServiceForm({ service, onSuccess }: ServiceFormProps) {
       if (file) {
         const formData = new FormData();
         formData.append("file", file);
-        imageUrl = await uploadImage(formData);
+        const result = await uploadImage(formData);
+        if (result.error) throw new Error(result.error);
+        imageUrl = result.url;
       }
 
       const data: any = {

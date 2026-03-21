@@ -65,7 +65,9 @@ export function CollegeForm({ college, onSuccess }: CollegeFormProps) {
       if (file) {
         const formData = new FormData();
         formData.append("file", file);
-        imageUrl = await uploadImage(formData);
+        const result = await uploadImage(formData);
+        if (result.error) throw new Error(result.error);
+        imageUrl = result.url;
       }
 
       const data = {

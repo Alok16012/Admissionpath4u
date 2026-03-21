@@ -58,8 +58,12 @@ export function BlogForm({ blog, onSuccess }: BlogFormProps) {
     formData.append("file", file);
 
     try {
-      const url = await uploadImage(formData);
-      form.setValue("main_image", url);
+      const result = await uploadImage(formData);
+      if (result.error) {
+        alert("Image upload failed: " + result.error);
+      } else if (result.url) {
+        form.setValue("main_image", result.url);
+      }
     } catch (error) {
       console.error("Upload failed", error);
       alert("Image upload failed");
