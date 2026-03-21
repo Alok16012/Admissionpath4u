@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "ccfzkjaaosyfxzxbpvsi.supabase.co",
       },
-{
+      {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     serverActions: {
-      bodySizeLimit: "10mb",
+      bodySizeLimit: "50mb",
     },
   },
 };

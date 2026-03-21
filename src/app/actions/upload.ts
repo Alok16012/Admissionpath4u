@@ -20,7 +20,10 @@ export async function uploadImage(formData: FormData) {
             upsert: false,
         });
 
-    if (error) throw new Error(`Upload failed: ${error.message}`);
+    if (error) {
+        console.error('Supabase Storage Error:', error);
+        throw new Error(`Upload failed: ${error.message}`);
+    }
 
     const { data } = supabase.storage.from('images').getPublicUrl(filePath);
     return data.publicUrl;
