@@ -122,7 +122,7 @@ export function Navbar() {
       <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur shadow-sm">
         <div className="container mx-auto flex h-20 items-center justify-between gap-4 px-6">
           {/* Logo */}
-          <Link href="/" className="flex shrink-0 items-center">
+          <Link href="/" className="flex shrink-0 items-center gap-2.5">
             <Image
               src="/logo.png"
               alt="Admission Path 4u"
@@ -131,6 +131,10 @@ export function Navbar() {
               className="h-12 w-auto md:h-14"
               priority
             />
+            <span className="hidden text-lg font-extrabold leading-tight text-[#27465B] sm:inline-block">
+              Admission Path{" "}
+              <span className="text-[#BDA25F]">4u</span>
+            </span>
           </Link>
 
           {/* Desktop course nav */}

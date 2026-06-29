@@ -14,7 +14,7 @@ import {
 
 export function Footer() {
   return (
-    <footer className="bg-zinc-950 text-zinc-300">
+    <footer className="bg-gradient-to-b from-[#27465B] to-[#1b3242] text-white/80">
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -34,7 +34,7 @@ export function Footer() {
                 Admission Path 4u
               </span>
             </Link>
-            <p className="text-zinc-400 leading-relaxed text-sm">
+            <p className="text-white/70 leading-relaxed text-sm">
               Your trusted partner in navigating the college admission journey.
               We help you find the best colleges, courses, and scholarships
               tailored to your career goals.
@@ -80,7 +80,7 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-bold text-white mb-6">Contact Us</h4>
             <ul className="space-y-6 text-sm">
-              <li className="flex items-start gap-3 text-zinc-400">
+              <li className="flex items-start gap-3 text-white/70">
                 <MapPin className="w-5 h-5 text-[#BDA25F] mt-0.5 shrink-0" />
                 <span>
                   GF-090, Migsun Galleria, Sector 27
@@ -88,13 +88,13 @@ export function Footer() {
                   Greater Noida, Uttar Pradesh - 201306
                 </span>
               </li>
-              <li className="flex items-center gap-3 text-zinc-400">
+              <li className="flex items-center gap-3 text-white/70">
                 <Phone className="w-5 h-5 text-[#BDA25F] shrink-0" />
                 <a href="tel:+919650501173" className="hover:text-white transition-colors">
                   +91 96505 01173
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-zinc-400">
+              <li className="flex items-center gap-3 text-white/70">
                 <Mail className="w-5 h-5 text-[#BDA25F] shrink-0" />
                 <a href="mailto:info@admissionpath4u.com" className="hover:text-white transition-colors">
                   info@admissionpath4u.com
@@ -106,8 +106,8 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-black py-6 border-t border-zinc-900">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+      <div className="bg-[#16242f] py-6 border-t border-white/10">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60">
           <p>© {new Date().getFullYear()} Admission Path 4u. All rights reserved.</p>
           <p>
             Developed by{" "}
@@ -115,7 +115,7 @@ export function Footer() {
               href="https://blinks-ai.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-white transition-colors"
+              className="text-white/70 hover:text-white transition-colors"
             >
               Blinks AI
             </Link>
@@ -144,7 +144,7 @@ function SocialLink({ href, icon: Icon, label }: { href: string; icon: any; labe
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-[#27465B] hover:text-white hover:border-[#27465B] transition-all duration-300"
+      className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white/70 hover:bg-[#BDA25F] hover:text-[#27465B] hover:border-[#BDA25F] transition-all duration-300"
     >
       <Icon className="w-4 h-4" />
     </Link>
@@ -162,7 +162,7 @@ function FooterLink({
     <li>
       <Link
         href={href}
-        className="text-zinc-400 hover:text-white hover:pl-1 transition-all duration-300 block"
+        className="text-white/70 hover:text-white hover:pl-1 transition-all duration-300 block"
       >
         {children}
       </Link>

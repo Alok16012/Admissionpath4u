@@ -34,7 +34,7 @@ export default async function HomePage() {
         <BannerCarousel images={settings?.heroImages} />
 
         {/* Brand gradient overlay for readability */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#27465B]/85 via-[#27465B]/70 to-[#1b3242]/90" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#27465B]/70 via-[#27465B]/45 to-[#1b3242]/75" />
 
         {/* Content Overlay */}
         <div className="container relative z-10 px-4 py-20 md:px-6 text-center text-white">
@@ -86,19 +86,22 @@ export default async function HomePage() {
       </section>
 
       {/* Stats / trust strip */}
-      <section className="border-b border-gray-100 bg-[#27465B]">
-        <div className="container mx-auto grid grid-cols-2 gap-px px-4 md:grid-cols-4 md:px-6">
+      <section className="border-b border-gray-100 bg-white">
+        <div className="container mx-auto grid grid-cols-2 px-4 md:grid-cols-4 md:px-6">
           {[
             { value: "500+", label: "Partner Colleges" },
             { value: "10,000+", label: "Students Guided" },
             { value: "100%", label: "Scholarship Help" },
             { value: "98%", label: "Success Rate" },
           ].map((s) => (
-            <div key={s.label} className="py-6 text-center text-white">
-              <div className="text-2xl font-extrabold text-[#BDA25F] md:text-3xl">
+            <div
+              key={s.label}
+              className="border-b border-gray-100 py-7 text-center md:border-b-0 md:border-r md:last:border-r-0"
+            >
+              <div className="text-2xl font-extrabold text-[#27465B] md:text-3xl">
                 {s.value}
               </div>
-              <div className="mt-1 text-xs font-medium uppercase tracking-wide text-white/70 md:text-sm">
+              <div className="mt-1 text-xs font-medium uppercase tracking-wide text-gray-500 md:text-sm">
                 {s.label}
               </div>
             </div>

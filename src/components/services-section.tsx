@@ -69,29 +69,28 @@ export function ServicesSection({ services }: ServicesSectionProps) {
               <Link
                 href={href}
                 key={service._id || index}
-                className="group relative overflow-hidden rounded-2xl bg-white border border-gray-100 hover:border-[#27465B]/30 shadow-sm hover:shadow-lg transition-all duration-300"
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-[#27465B]/40 hover:shadow-xl"
               >
-                <div className="flex items-center p-4 h-full">
-                  {/* Icon Circle */}
-                  <div className="flex-shrink-0 mr-4">
-                    <div className="w-12 h-12 rounded-full bg-[#27465B]/10 flex items-center justify-center text-[#27465B] group-hover:bg-[#27465B] group-hover:text-white transition-colors duration-300">
-                      <IconComponent className="w-6 h-6" />
-                    </div>
-                  </div>
+                {/* Hover accent glow */}
+                <span className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-[#BDA25F]/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                {/* Top accent bar */}
+                <span className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-[#27465B] to-[#BDA25F] transition-transform duration-300 group-hover:scale-x-100" />
 
-                  {/* Content */}
-                  <div className="flex-grow min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#27465B] transition-colors mb-1 truncate">
-                      {service.title}
-                    </h3>
-                    <p className="text-xs text-gray-500 line-clamp-2 mb-2 leading-relaxed">
-                      {service.description || service.shortDescription}
-                    </p>
-                    <div className="flex items-center text-xs font-bold text-[#27465B] group-hover:underline decoration-[#BDA25F] underline-offset-4">
-                      {cta}
-                      <ArrowRight className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-1" />
-                    </div>
-                  </div>
+                {/* Icon Badge */}
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#27465B]/10 text-[#27465B] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#27465B] group-hover:text-white">
+                  <IconComponent className="h-7 w-7" />
+                </div>
+
+                {/* Content */}
+                <h3 className="mb-2 text-lg font-bold text-gray-900 transition-colors group-hover:text-[#27465B]">
+                  {service.title}
+                </h3>
+                <p className="mb-4 flex-grow text-sm leading-relaxed text-gray-500 line-clamp-3">
+                  {service.description || service.shortDescription}
+                </p>
+                <div className="inline-flex items-center gap-1.5 text-sm font-bold text-[#27465B]">
+                  <span className="transition-colors group-hover:text-[#BDA25F]">{cta}</span>
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
                 </div>
               </Link>
             );
