@@ -33,22 +33,22 @@ export default async function HomePage() {
         {/* Carousel Background */}
         <BannerCarousel images={settings?.heroImages} />
 
-        {/* Brand gradient overlay for readability */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#27465B]/70 via-[#27465B]/45 to-[#1b3242]/75" />
+        {/* Light scrim — keeps text readable while letting the image show */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/25 via-black/15 to-black/35" />
 
         {/* Content Overlay */}
         <div className="container relative z-10 px-4 py-20 md:px-6 text-center text-white">
           <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#BDA25F]/40 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#BDA25F] backdrop-blur-sm">
             India&apos;s Trusted Admission Partner
           </span>
-          <h1 className="mx-auto max-w-4xl text-4xl font-extrabold leading-tight tracking-tight drop-shadow-md sm:text-5xl md:text-6xl">
+          <h1 className="mx-auto max-w-4xl text-4xl font-extrabold leading-tight tracking-tight [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:text-5xl md:text-6xl">
             {settings?.heroTitle || (
               <>
                 Find the <span className="text-[#BDA25F]">Best College</span> for Your Future
               </>
             )}
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base text-gray-100/90 drop-shadow-sm sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.5)] sm:text-lg">
             {settings?.heroSubtitle ||
               "Explore top colleges, entrance exams and scholarships — and apply with free expert guidance from Admission Path4u."}
           </p>
