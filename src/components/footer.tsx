@@ -72,7 +72,7 @@ export function Footer() {
             <h4 className="text-lg font-bold text-white mb-6">Contact Us</h4>
             <ul className="space-y-6 text-sm">
               <li className="flex items-start gap-3 text-zinc-400">
-                <MapPin className="w-5 h-5 text-[#800000] mt-0.5 shrink-0" />
+                <MapPin className="w-5 h-5 text-[#1d4ed8] mt-0.5 shrink-0" />
                 <span>
                   GF-090, Migsun Galleria, Sector 27
                   <br />
@@ -80,11 +80,11 @@ export function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-3 text-zinc-400">
-                <Phone className="w-5 h-5 text-[#800000] shrink-0" />
+                <Phone className="w-5 h-5 text-[#1d4ed8] shrink-0" />
                 <span>+91 96505 01173</span>
               </li>
               <li className="flex items-center gap-3 text-zinc-400">
-                <Mail className="w-5 h-5 text-[#800000] shrink-0" />
+                <Mail className="w-5 h-5 text-[#1d4ed8] shrink-0" />
                 <span>info@admissionpath4u.com</span>
               </li>
             </ul>
@@ -131,7 +131,7 @@ function SocialLink({ href, icon: Icon, label }: { href: string; icon: any; labe
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-[#800000] hover:text-white hover:border-[#800000] transition-all duration-300"
+      className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-[#1d4ed8] hover:text-white hover:border-[#1d4ed8] transition-all duration-300"
     >
       <Icon className="w-4 h-4" />
     </Link>

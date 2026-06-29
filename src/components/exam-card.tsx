@@ -15,15 +15,15 @@ export function ExamCard({ exam }: { exam: any }) {
 
         <div className="space-y-2 text-sm">
           <div className="flex items-center gap-2 text-muted-foreground">
-            <Calendar className="h-4 w-4 text-[#800000]" />
+            <Calendar className="h-4 w-4 text-[#1d4ed8]" />
             <span>{new Date(exam.date).toLocaleDateString()}</span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
-            <Monitor className="h-4 w-4 text-[#800000]" />
+            <Monitor className="h-4 w-4 text-[#1d4ed8]" />
             <span>{exam.listing_mode}</span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
-            <Users className="h-4 w-4 text-[#800000]" />
+            <Users className="h-4 w-4 text-[#1d4ed8]" />
             <span className="line-clamp-1">{exam.eligibility}</span>
           </div>
         </div>

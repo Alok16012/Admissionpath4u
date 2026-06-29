@@ -52,7 +52,7 @@ export function CourseFilterSection({ courses }: CourseFilterSectionProps) {
 
   return (
     <section className="py-16 container mx-auto px-6">
-      <h2 className="text-3xl font-bold text-center mb-10 text-[#800000]">
+      <h2 className="text-3xl font-bold text-center mb-10 text-[#1d4ed8]">
         <span className="text-blue-600">Find Best</span> College/Universities
       </h2>
 
@@ -64,9 +64,9 @@ export function CourseFilterSection({ courses }: CourseFilterSectionProps) {
             <Link
               href={`/colleges?course=${encodeURIComponent(course)}`}
               key={course}
-              className="flex items-center gap-4 p-4 rounded-full border border-gray-200 hover:border-[#800000] hover:shadow-md transition-all bg-white group"
+              className="flex items-center gap-4 p-4 rounded-full border border-gray-200 hover:border-[#1d4ed8] hover:shadow-md transition-all bg-white group"
             >
-              <div className="bg-[#A01D39] text-white p-2 rounded-full group-hover:bg-[#800000] transition-colors">
+              <div className="bg-[#2563eb] text-white p-2 rounded-full group-hover:bg-[#1d4ed8] transition-colors">
                 <Icon className="h-5 w-5" />
               </div>
               <span className="font-semibold text-gray-700 group-hover:text-black">

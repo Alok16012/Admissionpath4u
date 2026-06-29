@@ -32,7 +32,7 @@ export default async function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#800000] via-[#a00000] to-[#600000] py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#1d4ed8] via-[#1e40af] to-[#1e3a8a] py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-white blur-3xl" />
           <div className="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-[#FFD700] blur-3xl" />
@@ -62,7 +62,7 @@ export default async function ServicesPage() {
               { label: "Success Rate", value: "98%" },
             ].map((stat) => (
               <div key={stat.label} className="py-6 px-4 text-center">
-                <div className="text-2xl font-bold text-[#800000]">{stat.value}</div>
+                <div className="text-2xl font-bold text-[#1d4ed8]">{stat.value}</div>
                 <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
               </div>
             ))}
@@ -75,7 +75,7 @@ export default async function ServicesPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-3">
-              Everything You Need for <span className="text-[#800000]">Admission Success</span>
+              Everything You Need for <span className="text-[#1d4ed8]">Admission Success</span>
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto">
               Explore our full range of services designed to make your college admission journey smooth and successful.
@@ -89,14 +89,14 @@ export default async function ServicesPage() {
                 <Link
                   key={service._id}
                   href={`/services/${service.slug}`}
-                  className="group bg-white rounded-2xl border border-gray-100 hover:border-[#800000]/30 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
+                  className="group bg-white rounded-2xl border border-gray-100 hover:border-[#1d4ed8]/30 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
                 >
                   {/* Card Header */}
-                  <div className="bg-gradient-to-br from-[#800000]/5 to-[#800000]/10 p-6 group-hover:from-[#800000]/10 group-hover:to-[#800000]/20 transition-colors duration-300">
+                  <div className="bg-gradient-to-br from-[#1d4ed8]/5 to-[#1d4ed8]/10 p-6 group-hover:from-[#1d4ed8]/10 group-hover:to-[#1d4ed8]/20 transition-colors duration-300">
                     <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-4 group-hover:shadow-md transition-shadow">
-                      <IconComponent className="w-7 h-7 text-[#800000]" />
+                      <IconComponent className="w-7 h-7 text-[#1d4ed8]" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#800000] transition-colors mb-2">
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#1d4ed8] transition-colors mb-2">
                       {service.title}
                     </h3>
                     <p className="text-sm text-gray-500 leading-relaxed line-clamp-2">
@@ -121,10 +121,10 @@ export default async function ServicesPage() {
                   {/* CTA */}
                   <div className="px-6 py-4 border-t border-gray-50">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-semibold text-[#800000] group-hover:underline decoration-[#FFD700] underline-offset-4">
+                      <span className="text-sm font-semibold text-[#1d4ed8] group-hover:underline decoration-[#FFD700] underline-offset-4">
                         {service.ctaText || "Learn More"}
                       </span>
-                      <ArrowRight className="w-4 h-4 text-[#800000] group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 text-[#1d4ed8] group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 </Link>
@@ -135,7 +135,7 @@ export default async function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#800000] to-[#a00000] text-white">
+      <section className="py-16 bg-gradient-to-r from-[#1d4ed8] to-[#1e40af] text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
           <p className="text-white/80 mb-8 max-w-lg mx-auto">

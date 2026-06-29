@@ -38,7 +38,7 @@ export function Navbar() {
   return (
     <div className="w-full flex flex-col font-sans">
       {/* Top Bar - Maroon */}
-      <div className="hidden md:block bg-[#800000] text-white py-2 px-4 md:px-8">
+      <div className="hidden md:block bg-[#1d4ed8] text-white py-2 px-4 md:px-8">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-xs md:text-sm gap-4 px-6">
           {/* Top Left Links */}
           <nav className="hidden md:flex items-center space-x-6">
@@ -84,21 +84,21 @@ export function Navbar() {
                 placeholder="Search Colleges..."
                 className="border-0 shadow-none focus-visible:ring-0 h-6 px-0 text-black placeholder:text-gray-400 text-xs w-full"
               />
-              <Search className="h-4 w-4 text-[#800000]" />
+              <Search className="h-4 w-4 text-[#1d4ed8]" />
             </div>
 
             <div className="flex items-center space-x-3">
               <Link href="https://www.facebook.com/profile.php?id=61587842248462" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                <Facebook className="h-4 w-4 md:h-5 md:w-5 bg-white text-[#800000] rounded-full p-0.5" />
+                <Facebook className="h-4 w-4 md:h-5 md:w-5 bg-white text-[#1d4ed8] rounded-full p-0.5" />
               </Link>
               <Link href="https://www.instagram.com/admissionpath4u/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                <Instagram className="h-4 w-4 md:h-5 md:w-5 bg-white text-[#800000] rounded-full p-0.5" />
+                <Instagram className="h-4 w-4 md:h-5 md:w-5 bg-white text-[#1d4ed8] rounded-full p-0.5" />
               </Link>
               <Link href="https://www.youtube.com/channel/UCvIQzIgTENnGijRQWTReqTg" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                <Youtube className="h-4 w-4 md:h-5 md:w-5 bg-white text-[#800000] rounded-full p-0.5" />
+                <Youtube className="h-4 w-4 md:h-5 md:w-5 bg-white text-[#1d4ed8] rounded-full p-0.5" />
               </Link>
               <Link href="https://share.google/qQ63bbfFnHXiOOn4N" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                <Globe className="h-4 w-4 md:h-5 md:w-5 bg-white text-[#800000] rounded-full p-0.5" />
+                <Globe className="h-4 w-4 md:h-5 md:w-5 bg-white text-[#1d4ed8] rounded-full p-0.5" />
               </Link>
             </div>
           </div>
@@ -124,44 +124,44 @@ export function Navbar() {
           <nav className="hidden lg:flex items-center space-x-8 text-gray-700 font-medium text-sm">
             <Link
               href="/courses/btech"
-              className="flex items-center gap-1 hover:text-[#800000] transition-colors"
+              className="flex items-center gap-1 hover:text-[#1d4ed8] transition-colors"
             >
-              <Settings className="w-4 h-4 text-[#800000]" />
+              <Settings className="w-4 h-4 text-[#1d4ed8]" />
               <span>B.TECH</span>
             </Link>
             <Link
               href="/courses/mbbs"
-              className="flex items-center gap-1 hover:text-[#800000] transition-colors"
+              className="flex items-center gap-1 hover:text-[#1d4ed8] transition-colors"
             >
-              <GraduationCap className="w-4 h-4 text-[#800000]" />
+              <GraduationCap className="w-4 h-4 text-[#1d4ed8]" />
               <span>MBBS</span>
             </Link>
             <Link
               href="/courses/mba"
-              className="flex items-center gap-1 hover:text-[#800000] transition-colors"
+              className="flex items-center gap-1 hover:text-[#1d4ed8] transition-colors"
             >
-              <Briefcase className="w-4 h-4 text-[#800000]" />
+              <Briefcase className="w-4 h-4 text-[#1d4ed8]" />
               <span>MBA</span>
             </Link>
             <Link
               href="/courses/design"
-              className="flex items-center gap-1 hover:text-[#800000] transition-colors"
+              className="flex items-center gap-1 hover:text-[#1d4ed8] transition-colors"
             >
-              <Palette className="w-4 h-4 text-[#800000]" />
+              <Palette className="w-4 h-4 text-[#1d4ed8]" />
               <span>DESIGN</span>
             </Link>
             <Link
               href="/courses/law"
-              className="flex items-center gap-1 hover:text-[#800000] transition-colors"
+              className="flex items-center gap-1 hover:text-[#1d4ed8] transition-colors"
             >
-              <Gavel className="w-4 h-4 text-[#800000]" />
+              <Gavel className="w-4 h-4 text-[#1d4ed8]" />
               <span>LAW</span>
             </Link>
             <Link
               href="/courses/abroad-mbbs"
-              className="flex items-center gap-1 hover:text-[#800000] transition-colors"
+              className="flex items-center gap-1 hover:text-[#1d4ed8] transition-colors"
             >
-              <Plane className="w-4 h-4 text-[#800000]" />
+              <Plane className="w-4 h-4 text-[#1d4ed8]" />
               <span>ABROAD MBBS</span>
             </Link>
           </nav>
@@ -170,7 +170,7 @@ export function Navbar() {
           <div className="lg:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-[#800000]">
+                <Button variant="ghost" size="icon" className="text-[#1d4ed8]">
                   <Menu className="h-8 w-8" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
@@ -179,7 +179,7 @@ export function Navbar() {
                 side="right"
                 className="w-[300px] sm:w-[400px] px-4 pt-4"
               >
-                <SheetTitle className="text-left text-[#800000] font-bold mb-1">
+                <SheetTitle className="text-left text-[#1d4ed8] font-bold mb-1">
                   Menu
                 </SheetTitle>
                 <nav className="flex flex-col space-y-4">
@@ -256,7 +256,7 @@ function DropdownMenuWrapper({
 }) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center gap-2 hover:text-[#800000] outline-none transition-colors">
+      <DropdownMenuTrigger className="flex items-center gap-2 hover:text-[#1d4ed8] outline-none transition-colors">
         {icon}
         <span>{label}</span>
       </DropdownMenuTrigger>
@@ -283,7 +283,7 @@ function MobileLink({
     <Link
       href={href}
       onClick={onClick}
-      className="text-lg font-medium hover:text-[#800000] transition-colors"
+      className="text-lg font-medium hover:text-[#1d4ed8] transition-colors"
     >
       {children}
     </Link>

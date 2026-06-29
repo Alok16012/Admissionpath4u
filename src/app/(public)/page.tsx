@@ -50,6 +50,19 @@ export default async function HomePage() {
               <Link href="/colleges">Get Started</Link>
             </Button>
           </div>
+
+          {/* Quick access course pills */}
+          <div className="mt-6 flex flex-wrap justify-center gap-2 md:gap-3">
+            {["B.Tech", "MBBS", "MBA", "B.Sc", "M.Sc"].map((c) => (
+              <Link
+                key={c}
+                href={`/colleges?course=${encodeURIComponent(c)}`}
+                className="rounded-full border border-white/40 bg-white/15 px-4 py-1.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white hover:text-[#1d4ed8]"
+              >
+                {c}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -69,14 +82,14 @@ export default async function HomePage() {
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-[#800000]">
+              <h2 className="text-3xl font-bold tracking-tight text-[#1d4ed8]">
                 Top <span className="text-blue-600">Placements</span>
               </h2>
               <p className="text-gray-500 mt-2">
                 Colleges with highest salary packages
               </p>
             </div>
-            <Button variant="link" asChild className="text-[#800000]">
+            <Button variant="link" asChild className="text-[#1d4ed8]">
               <Link href="/colleges">View All</Link>
             </Button>
           </div>
@@ -99,14 +112,14 @@ export default async function HomePage() {
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-[#800000]">
+              <h2 className="text-3xl font-bold tracking-tight text-[#1d4ed8]">
                 Upcoming <span className="text-blue-600">Exams</span>
               </h2>
               <p className="text-gray-500 mt-2">
                 Stay updated with latest entrance exams
               </p>
             </div>
-            <Button variant="link" asChild className="text-[#800000]">
+            <Button variant="link" asChild className="text-[#1d4ed8]">
               <Link href="/exams">View All</Link>
             </Button>
           </div>
@@ -129,14 +142,14 @@ export default async function HomePage() {
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-[#800000]">
+              <h2 className="text-3xl font-bold tracking-tight text-[#1d4ed8]">
                 Latest <span className="text-blue-600">News & Blogs</span>
               </h2>
               <p className="text-gray-500 mt-2">
                 Insights, tips and education news
               </p>
             </div>
-            <Button variant="link" asChild className="text-[#800000]">
+            <Button variant="link" asChild className="text-[#1d4ed8]">
               <Link href="/blogs">View All</Link>
             </Button>
           </div>

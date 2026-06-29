@@ -50,7 +50,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-10 text-[#800000]">
+        <h2 className="text-3xl font-bold text-center mb-10 text-[#1d4ed8]">
           <span className="text-blue-600">Our</span> Services
         </h2>
 
@@ -64,25 +64,25 @@ export function ServicesSection({ services }: ServicesSectionProps) {
               <Link
                 href={href}
                 key={service._id || index}
-                className="group relative overflow-hidden rounded-2xl bg-white border border-gray-100 hover:border-[#800000]/30 shadow-sm hover:shadow-lg transition-all duration-300"
+                className="group relative overflow-hidden rounded-2xl bg-white border border-gray-100 hover:border-[#1d4ed8]/30 shadow-sm hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center p-4 h-full">
                   {/* Icon Circle */}
                   <div className="flex-shrink-0 mr-4">
-                    <div className="w-12 h-12 rounded-full bg-[#800000]/10 flex items-center justify-center text-[#800000] group-hover:bg-[#800000] group-hover:text-white transition-colors duration-300">
+                    <div className="w-12 h-12 rounded-full bg-[#1d4ed8]/10 flex items-center justify-center text-[#1d4ed8] group-hover:bg-[#1d4ed8] group-hover:text-white transition-colors duration-300">
                       <IconComponent className="w-6 h-6" />
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex-grow min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#800000] transition-colors mb-1 truncate">
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#1d4ed8] transition-colors mb-1 truncate">
                       {service.title}
                     </h3>
                     <p className="text-xs text-gray-500 line-clamp-2 mb-2 leading-relaxed">
                       {service.description || service.shortDescription}
                     </p>
-                    <div className="flex items-center text-xs font-bold text-[#800000] group-hover:underline decoration-[#FFD700] underline-offset-4">
+                    <div className="flex items-center text-xs font-bold text-[#1d4ed8] group-hover:underline decoration-[#FFD700] underline-offset-4">
                       {cta}
                       <ArrowRight className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-1" />
                     </div>
@@ -96,7 +96,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
         <div className="text-center mt-8">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#800000] hover:underline decoration-[#FFD700] underline-offset-4"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] hover:underline decoration-[#FFD700] underline-offset-4"
           >
             View All Services
             <ArrowRight className="w-4 h-4" />

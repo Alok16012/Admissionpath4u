@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-[#800000] text-white">
+      <section className="relative py-20 bg-[#1d4ed8] text-white">
         <div className="container px-4 md:px-6 mx-auto text-center">
           <Badge
             variant="outline"
@@ -67,7 +67,7 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-[#800000] sm:text-4xl mb-4">
+            <h2 className="text-3xl font-bold tracking-tight text-[#1d4ed8] sm:text-4xl mb-4">
               Why Choose Admission Path 4u?
             </h2>
             <p className="text-gray-600 text-lg">

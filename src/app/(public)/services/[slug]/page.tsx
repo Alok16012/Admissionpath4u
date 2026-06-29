@@ -166,9 +166,9 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       <div className="bg-gray-50 border-b py-3">
         <div className="container mx-auto px-6">
           <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-[#800000] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-[#1d4ed8] transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link href="/services" className="hover:text-[#800000] transition-colors">Services</Link>
+            <Link href="/services" className="hover:text-[#1d4ed8] transition-colors">Services</Link>
             <ChevronRight className="w-3 h-3" />
             <span className="text-gray-900 font-medium">{service.title}</span>
           </nav>
@@ -176,7 +176,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#800000] via-[#900000] to-[#600000] py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#1d4ed8] via-[#1e40af] to-[#1e3a8a] py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-full h-full"
             style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
@@ -247,7 +247,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <div className="grid md:grid-cols-3 gap-10">
             <div className="md:col-span-2">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <span className="w-1 h-6 bg-[#800000] rounded-full inline-block" />
+                <span className="w-1 h-6 bg-[#1d4ed8] rounded-full inline-block" />
                 About This Service
               </h2>
               <div className="prose prose-gray max-w-none">
@@ -263,8 +263,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 <h3 className="font-bold text-gray-900 mb-4 text-base">Quick Info</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-[#800000]/10 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 text-[#800000]" />
+                    <div className="w-8 h-8 rounded-lg bg-[#1d4ed8]/10 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="w-4 h-4 text-[#1d4ed8]" />
                     </div>
                     <div>
                       <p className="text-xs text-gray-400">Service Type</p>
@@ -291,7 +291,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                   </div>
                 </div>
                 <div className="mt-6 pt-4 border-t border-gray-200">
-                  <Button asChild className="w-full bg-[#800000] hover:bg-[#900000] text-white">
+                  <Button asChild className="w-full bg-[#1d4ed8] hover:bg-[#1e40af] text-white">
                     <Link href="/contact">
                       Contact Us
                       <ArrowRight className="ml-2 w-4 h-4" />
@@ -309,7 +309,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-6 max-w-4xl">
             <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">
-              Key <span className="text-[#800000]">Features</span>
+              Key <span className="text-[#1d4ed8]">Features</span>
             </h2>
             <p className="text-gray-500 text-center mb-10">What makes this service stand out</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -318,8 +318,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                   key={i}
                   className="flex items-center gap-3 bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className="w-8 h-8 rounded-full bg-[#800000]/10 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-4 h-4 text-[#800000]" />
+                  <div className="w-8 h-8 rounded-full bg-[#1d4ed8]/10 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-4 h-4 text-[#1d4ed8]" />
                   </div>
                   <span className="text-sm font-medium text-gray-700">{feature}</span>
                 </div>
@@ -333,7 +333,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       {service.benefits && service.benefits.length > 0 && (
         <section className="py-16 bg-white">
           <div className="container mx-auto px-6 max-w-4xl">
-            <div className="bg-gradient-to-br from-[#800000]/5 to-[#800000]/10 rounded-3xl p-8 md:p-12 border border-[#800000]/10">
+            <div className="bg-gradient-to-br from-[#1d4ed8]/5 to-[#1d4ed8]/10 rounded-3xl p-8 md:p-12 border border-[#1d4ed8]/10">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
                 Why Choose This Service?
               </h2>
@@ -342,7 +342,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 {service.benefits.map((benefit: string, i: number) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-[#FFD700] flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle className="w-3.5 h-3.5 text-[#800000]" />
+                      <CheckCircle className="w-3.5 h-3.5 text-[#1d4ed8]" />
                     </div>
                     <span className="text-gray-700 text-sm leading-relaxed">{benefit}</span>
                   </div>
@@ -358,17 +358,17 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-6 max-w-3xl">
             <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">
-              How It <span className="text-[#800000]">Works</span>
+              How It <span className="text-[#1d4ed8]">Works</span>
             </h2>
             <p className="text-gray-500 text-center mb-12">Simple steps to get started</p>
             <div className="relative">
               {/* Vertical Line */}
-              <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#800000] to-[#800000]/10 hidden md:block" />
+              <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#1d4ed8] to-[#1d4ed8]/10 hidden md:block" />
               <div className="space-y-8">
                 {service.processSteps.map((step: { title: string; description: string }, i: number) => (
                   <div key={i} className="flex gap-6 items-start relative">
                     {/* Step Number */}
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#800000] text-white flex items-center justify-center font-bold text-lg shadow-lg z-10">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#1d4ed8] text-white flex items-center justify-center font-bold text-lg shadow-lg z-10">
                       {i + 1}
                     </div>
                     {/* Step Content */}
@@ -389,7 +389,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         <section className="py-16 bg-white">
           <div className="container mx-auto px-6 max-w-3xl">
             <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">
-              Frequently Asked <span className="text-[#800000]">Questions</span>
+              Frequently Asked <span className="text-[#1d4ed8]">Questions</span>
             </h2>
             <p className="text-gray-500 text-center mb-10">Answers to common queries</p>
             <div className="space-y-4">
@@ -398,7 +398,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                   key={i}
                   className="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden"
                 >
-                  <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-gray-800 hover:text-[#800000] transition-colors list-none">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-gray-800 hover:text-[#1d4ed8] transition-colors list-none">
                     <span>{faq.question}</span>
                     <ChevronDown className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" />
                   </summary>
@@ -413,7 +413,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
       )}
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#800000] to-[#a00000] text-white">
+      <section className="py-16 bg-gradient-to-r from-[#1d4ed8] to-[#1e40af] text-white">
         <div className="container mx-auto px-6 text-center max-w-2xl">
           <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mx-auto mb-6">
             <IconComponent className="w-8 h-8 text-[#FFD700]" />

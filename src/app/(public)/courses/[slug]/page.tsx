@@ -59,9 +59,9 @@ export default async function CoursePage(props: {
       <div className="bg-gray-50 border-b py-3">
         <div className="container mx-auto px-6">
           <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link href="/" className="hover:text-[#800000]">Home</Link>
+            <Link href="/" className="hover:text-[#1d4ed8]">Home</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link href="/colleges" className="hover:text-[#800000]">Colleges</Link>
+            <Link href="/colleges" className="hover:text-[#1d4ed8]">Colleges</Link>
             <ChevronRight className="w-3 h-3" />
             <span className="text-gray-900 font-medium">{course.name}</span>
           </nav>
@@ -98,14 +98,14 @@ export default async function CoursePage(props: {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100">
             <div className="py-5 px-4 flex items-center gap-3">
-              <Clock className="w-5 h-5 text-[#800000] flex-shrink-0" />
+              <Clock className="w-5 h-5 text-[#1d4ed8] flex-shrink-0" />
               <div>
                 <p className="text-xs text-gray-400">Duration</p>
                 <p className="text-sm font-semibold text-gray-800">{course.duration}</p>
               </div>
             </div>
             <div className="py-5 px-4 flex items-center gap-3">
-              <BookOpen className="w-5 h-5 text-[#800000] flex-shrink-0" />
+              <BookOpen className="w-5 h-5 text-[#1d4ed8] flex-shrink-0" />
               <div>
                 <p className="text-xs text-gray-400">Eligibility</p>
                 <p className="text-sm font-semibold text-gray-800 line-clamp-1">{course.eligibility}</p>
@@ -142,7 +142,7 @@ export default async function CoursePage(props: {
                   <ul className="space-y-2">
                     {course.highlights.map((h, i) => (
                       <li key={i} className="flex items-start gap-2 text-xs text-gray-700">
-                        <CheckCircle className="w-3.5 h-3.5 text-[#800000] flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-3.5 h-3.5 text-[#1d4ed8] flex-shrink-0 mt-0.5" />
                         {h}
                       </li>
                     ))}
@@ -162,7 +162,7 @@ export default async function CoursePage(props: {
                 </div>
 
                 {/* CTA */}
-                <div className="bg-gradient-to-br from-[#800000] to-[#a00000] rounded-2xl p-5 text-white text-center">
+                <div className="bg-gradient-to-br from-[#1d4ed8] to-[#1e40af] rounded-2xl p-5 text-white text-center">
                   <p className="text-sm font-bold mb-1">Need Admission Help?</p>
                   <p className="text-xs text-white/70 mb-3">Free counseling by experts</p>
                   <Button asChild size="sm" className="bg-[#FFD700] hover:bg-[#FFD700]/90 text-black font-bold w-full border-none">
@@ -212,7 +212,7 @@ export default async function CoursePage(props: {
                   <Search className="w-12 h-12 text-gray-300 mx-auto mb-4" />
                   <p className="text-gray-500 text-lg font-medium">No colleges found</p>
                   <p className="text-gray-400 text-sm mt-1">Try adjusting your search or check back later</p>
-                  <Button asChild className="mt-4 bg-[#800000] hover:bg-[#900000] text-white">
+                  <Button asChild className="mt-4 bg-[#1d4ed8] hover:bg-[#1e40af] text-white">
                     <Link href="/contact">Request College Info</Link>
                   </Button>
                 </div>
@@ -233,7 +233,7 @@ export default async function CoursePage(props: {
                 <Link
                   key={c.slug}
                   href={`/courses/${c.slug}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 hover:bg-[#800000] hover:text-white text-gray-700 rounded-full text-sm font-medium border border-gray-200 hover:border-[#800000] transition-all"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 hover:bg-[#1d4ed8] hover:text-white text-gray-700 rounded-full text-sm font-medium border border-gray-200 hover:border-[#1d4ed8] transition-all"
                 >
                   {c.name}
                 </Link>
