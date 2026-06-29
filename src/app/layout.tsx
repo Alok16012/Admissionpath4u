@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Admission Path 4u - Find Best Colleges in India",
+    default: "Find Best Colleges in India",
     template: "%s | Admission Path 4u",
   },
   description:
