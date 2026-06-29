@@ -88,7 +88,7 @@ export function CoursesOverview({ courseStats, colleges }: CoursesOverviewProps)
               onClick={() => setActiveCourse(activeCourse === stat.slug ? null : stat.slug)}
               className={`cursor-pointer rounded-2xl border p-5 transition-all hover:shadow-md ${
                 activeCourse === stat.slug
-                  ? "border-[#1d4ed8] bg-[#1d4ed8]/5 shadow-md"
+                  ? "border-[#27465B] bg-[#27465B]/5 shadow-md"
                   : "border-gray-100 bg-white"
               }`}
             >
@@ -98,7 +98,7 @@ export function CoursesOverview({ courseStats, colleges }: CoursesOverviewProps)
                   <p className="text-xs text-gray-500 mt-0.5">{config?.fullName}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-2xl font-bold text-[#1d4ed8]">{stat.count}</p>
+                  <p className="text-2xl font-bold text-[#27465B]">{stat.count}</p>
                   <p className="text-xs text-gray-400">Colleges</p>
                 </div>
               </div>

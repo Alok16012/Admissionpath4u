@@ -51,30 +51,37 @@ export function CourseFilterSection({ courses }: CourseFilterSectionProps) {
   if (!courses || courses.length === 0) return null;
 
   return (
-    <section className="py-16 container mx-auto px-6">
-      <h2 className="text-3xl font-bold text-center mb-10 text-[#1d4ed8]">
-        <span className="text-blue-600">Find Best</span> College/Universities
-      </h2>
+    <section className="bg-gray-50 py-12 md:py-14">
+      <div className="container mx-auto px-6">
+        <div className="mx-auto mb-10 max-w-2xl text-center">
+          <h2 className="text-3xl font-bold text-[#27465B]">
+            Find Best <span className="text-[#BDA25F]">College / Universities</span>
+          </h2>
+          <p className="mt-3 text-gray-500">
+            Browse colleges by your preferred stream and discover the right fit for your career.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {courses.map((course) => {
-          const Icon = iconMap[course] || GraduationCap;
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+          {courses.map((course) => {
+            const Icon = iconMap[course] || GraduationCap;
 
-          return (
-            <Link
-              href={`/colleges?course=${encodeURIComponent(course)}`}
-              key={course}
-              className="flex items-center gap-4 p-4 rounded-full border border-gray-200 hover:border-[#1d4ed8] hover:shadow-md transition-all bg-white group"
-            >
-              <div className="bg-[#2563eb] text-white p-2 rounded-full group-hover:bg-[#1d4ed8] transition-colors">
-                <Icon className="h-5 w-5" />
-              </div>
-              <span className="font-semibold text-gray-700 group-hover:text-black">
-                {course}
-              </span>
-            </Link>
-          );
-        })}
+            return (
+              <Link
+                href={`/colleges?course=${encodeURIComponent(course)}`}
+                key={course}
+                className="group flex items-center gap-3 rounded-2xl border border-gray-200 bg-white p-4 transition-all hover:-translate-y-0.5 hover:border-[#27465B] hover:shadow-lg"
+              >
+                <div className="rounded-xl bg-[#27465B]/10 p-2.5 text-[#27465B] transition-colors group-hover:bg-[#27465B] group-hover:text-white">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <span className="font-semibold text-gray-700 transition-colors group-hover:text-[#27465B]">
+                  {course}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

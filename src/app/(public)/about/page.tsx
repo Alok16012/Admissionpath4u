@@ -12,17 +12,17 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-[#1d4ed8] text-white">
+      <section className="relative py-20 bg-[#27465B] text-white">
         <div className="container px-4 md:px-6 mx-auto text-center">
           <Badge
             variant="outline"
-            className="mb-4 border-white/20 text-[#FFD700] px-4 py-1"
+            className="mb-4 border-white/20 text-[#BDA25F] px-4 py-1"
           >
             About Us
           </Badge>
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl mb-6">
             Empowering Your{" "}
-            <span className="text-[#FFD700]">Academic Journey</span>
+            <span className="text-[#BDA25F]">Academic Journey</span>
           </h1>
           <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-200 leading-relaxed">
             We are dedicated to simplifying the college admission process for
@@ -67,7 +67,7 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-[#1d4ed8] sm:text-4xl mb-4">
+            <h2 className="text-3xl font-bold tracking-tight text-[#27465B] sm:text-4xl mb-4">
               Why Choose Admission Path 4u?
             </h2>
             <p className="text-gray-600 text-lg">
@@ -118,7 +118,7 @@ function FeatureCard({
   return (
     <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
       <div className="flex items-start gap-4">
-        <CheckCircle2 className="w-6 h-6 text-[#FFD700] shrink-0 mt-1" />
+        <CheckCircle2 className="w-6 h-6 text-[#BDA25F] shrink-0 mt-1" />
         <div>
           <h3 className="font-bold text-xl text-gray-900 mb-2">{title}</h3>
           <p className="text-gray-600 leading-relaxed">{description}</p>

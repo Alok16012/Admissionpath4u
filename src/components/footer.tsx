@@ -16,13 +16,22 @@ export function Footer() {
   return (
     <footer className="bg-zinc-950 text-zinc-300">
       {/* Main Footer Content */}
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
           <div className="space-y-6">
-            <Link href="/" className="block">
-              <span className="text-2xl font-extrabold text-[#FFD700]">
-                AdmissionPath4u
+            <Link href="/" className="flex items-center gap-3">
+              <span className="inline-flex items-center justify-center rounded-lg bg-white p-1.5">
+                <Image
+                  src="/logo.png"
+                  alt="Admission Path 4u"
+                  width={120}
+                  height={40}
+                  className="h-9 w-auto"
+                />
+              </span>
+              <span className="text-xl font-extrabold text-[#BDA25F]">
+                Admission Path 4u
               </span>
             </Link>
             <p className="text-zinc-400 leading-relaxed text-sm">
@@ -72,7 +81,7 @@ export function Footer() {
             <h4 className="text-lg font-bold text-white mb-6">Contact Us</h4>
             <ul className="space-y-6 text-sm">
               <li className="flex items-start gap-3 text-zinc-400">
-                <MapPin className="w-5 h-5 text-[#1d4ed8] mt-0.5 shrink-0" />
+                <MapPin className="w-5 h-5 text-[#BDA25F] mt-0.5 shrink-0" />
                 <span>
                   GF-090, Migsun Galleria, Sector 27
                   <br />
@@ -80,12 +89,16 @@ export function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-3 text-zinc-400">
-                <Phone className="w-5 h-5 text-[#1d4ed8] shrink-0" />
-                <span>+91 96505 01173</span>
+                <Phone className="w-5 h-5 text-[#BDA25F] shrink-0" />
+                <a href="tel:+919650501173" className="hover:text-white transition-colors">
+                  +91 96505 01173
+                </a>
               </li>
               <li className="flex items-center gap-3 text-zinc-400">
-                <Mail className="w-5 h-5 text-[#1d4ed8] shrink-0" />
-                <span>info@admissionpath4u.com</span>
+                <Mail className="w-5 h-5 text-[#BDA25F] shrink-0" />
+                <a href="mailto:info@admissionpath4u.com" className="hover:text-white transition-colors">
+                  info@admissionpath4u.com
+                </a>
               </li>
             </ul>
           </div>
@@ -95,7 +108,7 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="bg-black py-6 border-t border-zinc-900">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <p>© {new Date().getFullYear()} AdmissionPath4u. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Admission Path 4u. All rights reserved.</p>
           <p>
             Developed by{" "}
             <Link
@@ -131,7 +144,7 @@ function SocialLink({ href, icon: Icon, label }: { href: string; icon: any; labe
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-[#1d4ed8] hover:text-white hover:border-[#1d4ed8] transition-all duration-300"
+      className="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:bg-[#27465B] hover:text-white hover:border-[#27465B] transition-all duration-300"
     >
       <Icon className="w-4 h-4" />
     </Link>

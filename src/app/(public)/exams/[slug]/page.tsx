@@ -81,7 +81,7 @@ export default async function ExamDetailsPage(props: {
 
         {/* Sidebar */}
         <div className="space-y-6">
-          <div className="bg-[#2563eb] text-white p-6 rounded-xl shadow-lg">
+          <div className="bg-[#27465B] text-white p-6 rounded-xl shadow-lg">
             <h3 className="text-xl font-bold mb-4">Important Info</h3>
             <div className="space-y-4">
               <div>

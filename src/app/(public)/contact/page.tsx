@@ -35,7 +35,7 @@ export default function ContactPage() {
             <div className="space-y-8 relative pl-8 border-l border-gray-500/30 ml-3">
               {/* Address */}
               <div className="relative">
-                <span className="absolute -left-[45px] top-0 bg-[#2563eb] p-2 rounded-full shadow-lg">
+                <span className="absolute -left-[45px] top-0 bg-[#27465B] p-2 rounded-full shadow-lg">
                   <MapPin className="h-6 w-6 text-white" />
                 </span>
                 <h3 className="text-2xl font-bold mb-1">Address</h3>
@@ -48,7 +48,7 @@ export default function ContactPage() {
 
               {/* Contact */}
               <div className="relative">
-                <span className="absolute -left-[45px] top-0 bg-[#2563eb] p-2 rounded-full shadow-lg">
+                <span className="absolute -left-[45px] top-0 bg-[#27465B] p-2 rounded-full shadow-lg">
                   <Phone className="h-6 w-6 text-white" />
                 </span>
                 <h3 className="text-2xl font-bold mb-1">Contact</h3>
@@ -58,7 +58,7 @@ export default function ContactPage() {
 
               {/* E-mail */}
               <div className="relative">
-                <span className="absolute -left-[45px] top-0 bg-[#2563eb] p-2 rounded-full shadow-lg">
+                <span className="absolute -left-[45px] top-0 bg-[#27465B] p-2 rounded-full shadow-lg">
                   <Mail className="h-6 w-6 text-white" />
                 </span>
                 <h3 className="text-2xl font-bold mb-1">E-mail</h3>
@@ -81,7 +81,7 @@ export default function ContactPage() {
           </div>
 
           {/* Right Column: Form */}
-          <div className="w-full lg:w-7/12 bg-[#2563eb] text-white p-8 md:p-10 rounded-xl shadow-2xl">
+          <div className="w-full lg:w-7/12 bg-[#27465B] text-white p-8 md:p-10 rounded-xl shadow-2xl">
             <div className="mb-8">
               <h2 className="text-3xl font-bold mb-2">Your Details</h2>
               <p className="text-gray-200">

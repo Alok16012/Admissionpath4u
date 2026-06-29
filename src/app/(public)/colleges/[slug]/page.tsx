@@ -77,14 +77,14 @@ export default async function CollegeDetailPage(props: {
             <div className="space-y-6">
               <div>
                 <h3 className="font-semibold text-lg flex items-center">
-                  <BookOpen className="mr-2 h-5 w-5 text-blue-600" />
+                  <BookOpen className="mr-2 h-5 w-5 text-[#27465B]" />
                   Courses Offered
                 </h3>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {college.courses.map((c: string) => (
                     <span
                       key={c}
-                      className="bg-blue-50 text-blue-700 border border-blue-200 text-sm px-3 py-1 rounded-full dark:bg-blue-900/30 dark:text-blue-200 dark:border-blue-800"
+                      className="bg-[#27465B]/5 text-[#1b3242] border border-[#27465B]/20 text-sm px-3 py-1 rounded-full dark:bg-[#1b3242]/30 dark:text-[#BDA25F] dark:border-[#1b3242]"
                     >
                       {c}
                     </span>

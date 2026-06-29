@@ -27,7 +27,7 @@ export function CollegeCard({ college }: { college: any }) {
         )}
         {isTopPlacement && (
           <div className="absolute top-3 left-3">
-            <span className="inline-flex items-center gap-1 bg-[#FFD700] text-[#1d4ed8] text-xs font-bold px-2.5 py-1 rounded-full shadow">
+            <span className="inline-flex items-center gap-1 bg-[#BDA25F] text-[#27465B] text-xs font-bold px-2.5 py-1 rounded-full shadow">
               <Trophy className="w-3 h-3" />
               Top Placement
             </span>
@@ -63,7 +63,7 @@ export function CollegeCard({ college }: { college: any }) {
       <CardFooter className="p-4 pt-0">
         <Button
           asChild
-          className="w-full bg-[#1d4ed8] hover:bg-[#1e40af] text-white"
+          className="w-full bg-[#27465B] hover:bg-[#1b3242] text-white"
         >
           <Link href={`/colleges/${college.slug}`}>View Details</Link>
         </Button>

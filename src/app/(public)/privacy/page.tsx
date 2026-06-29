@@ -7,7 +7,7 @@ export const metadata = {
 export default function PrivacyPage() {
   return (
     <div className="container mx-auto px-4 md:px-6 py-12 max-w-4xl">
-      <h1 className="text-3xl font-bold tracking-tight text-[#1d4ed8] mb-2">
+      <h1 className="text-3xl font-bold tracking-tight text-[#27465B] mb-2">
         Privacy Policy
       </h1>
       <p className="text-gray-500 mb-8">Last Updated: January 18, 2024</p>
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
             contact us at:
           </p>
           <div className="bg-gray-50 p-6 rounded-lg border border-gray-100">
-            <p className="font-semibold text-gray-900">AdmissionPath4u</p>
+            <p className="font-semibold text-gray-900">Admission Path 4u</p>
             <p className="text-gray-600">GF-090, Migsun Galleria, Sector 27</p>
             <p className="text-gray-600">
               Greater Noida, Uttar Pradesh - 201306

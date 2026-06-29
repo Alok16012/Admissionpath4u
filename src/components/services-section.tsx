@@ -48,11 +48,16 @@ export function ServicesSection({ services }: ServicesSectionProps) {
   const items = services && services.length > 0 ? services : STATIC_SERVICES;
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-12 bg-white md:py-14">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-10 text-[#1d4ed8]">
-          <span className="text-blue-600">Our</span> Services
-        </h2>
+        <div className="mx-auto mb-10 max-w-2xl text-center">
+          <h2 className="text-3xl font-bold text-[#27465B]">
+            Our <span className="text-[#BDA25F]">Services</span>
+          </h2>
+          <p className="mt-3 text-gray-500">
+            End-to-end admission support — from finding your college to securing scholarships and loans.
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
           {items.map((service: any, index: number) => {
@@ -64,25 +69,25 @@ export function ServicesSection({ services }: ServicesSectionProps) {
               <Link
                 href={href}
                 key={service._id || index}
-                className="group relative overflow-hidden rounded-2xl bg-white border border-gray-100 hover:border-[#1d4ed8]/30 shadow-sm hover:shadow-lg transition-all duration-300"
+                className="group relative overflow-hidden rounded-2xl bg-white border border-gray-100 hover:border-[#27465B]/30 shadow-sm hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center p-4 h-full">
                   {/* Icon Circle */}
                   <div className="flex-shrink-0 mr-4">
-                    <div className="w-12 h-12 rounded-full bg-[#1d4ed8]/10 flex items-center justify-center text-[#1d4ed8] group-hover:bg-[#1d4ed8] group-hover:text-white transition-colors duration-300">
+                    <div className="w-12 h-12 rounded-full bg-[#27465B]/10 flex items-center justify-center text-[#27465B] group-hover:bg-[#27465B] group-hover:text-white transition-colors duration-300">
                       <IconComponent className="w-6 h-6" />
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex-grow min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#1d4ed8] transition-colors mb-1 truncate">
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#27465B] transition-colors mb-1 truncate">
                       {service.title}
                     </h3>
                     <p className="text-xs text-gray-500 line-clamp-2 mb-2 leading-relaxed">
                       {service.description || service.shortDescription}
                     </p>
-                    <div className="flex items-center text-xs font-bold text-[#1d4ed8] group-hover:underline decoration-[#FFD700] underline-offset-4">
+                    <div className="flex items-center text-xs font-bold text-[#27465B] group-hover:underline decoration-[#BDA25F] underline-offset-4">
                       {cta}
                       <ArrowRight className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-1" />
                     </div>
@@ -96,7 +101,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
         <div className="text-center mt-8">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#1d4ed8] hover:underline decoration-[#FFD700] underline-offset-4"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#27465B] hover:underline decoration-[#BDA25F] underline-offset-4"
           >
             View All Services
             <ArrowRight className="w-4 h-4" />

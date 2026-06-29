@@ -85,7 +85,7 @@ export default async function BlogDetailsPage(props: {
         </div>
 
         <div className="prose prose-lg max-w-none prose-img:rounded-xl">
-          <div className="bg-gray-50 p-6 rounded-lg font-medium text-gray-700 italic border-l-4 border-[#1d4ed8]">
+          <div className="bg-gray-50 p-6 rounded-lg font-medium text-gray-700 italic border-l-4 border-[#27465B]">
             {blog.excerpt}
           </div>
 
@@ -98,7 +98,7 @@ export default async function BlogDetailsPage(props: {
       <div className="mt-16 pt-8 border-t">
         <h3 className="text-2xl font-bold mb-6">More from Admission Path 4u</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-[#1d4ed8] text-white p-6 rounded-xl">
+          <div className="bg-[#27465B] text-white p-6 rounded-xl">
             <h4 className="font-bold text-xl mb-2">Find Top Colleges</h4>
             <p className="mb-4 text-white/80">
               Explore the best colleges for your career path.
@@ -107,7 +107,7 @@ export default async function BlogDetailsPage(props: {
               <Link href="/colleges">Explore Colleges</Link>
             </Button>
           </div>
-          <div className="bg-[#FFD700] p-6 rounded-xl">
+          <div className="bg-[#BDA25F] p-6 rounded-xl">
             <h4 className="font-bold text-xl mb-2 text-black">
               Upcoming Exams
             </h4>

@@ -29,7 +29,7 @@ export function CourseSearchBar() {
         placeholder="Search colleges by name, city or state..."
         defaultValue={searchParams.get("search") || ""}
         onChange={(e) => handleSearch(e.target.value)}
-        className="pl-11 pr-4 h-12 rounded-full bg-white border-0 shadow-lg text-gray-800 placeholder:text-gray-400 text-sm focus-visible:ring-2 focus-visible:ring-[#FFD700]"
+        className="pl-11 pr-4 h-12 rounded-full bg-white border-0 shadow-lg text-gray-800 placeholder:text-gray-400 text-sm focus-visible:ring-2 focus-visible:ring-[#BDA25F]"
       />
     </div>
   );
