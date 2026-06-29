@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 export const metadata = {
   title: "Upcoming Entrance Exams in India — Dates & Eligibility",
   description:
-    "Stay updated on upcoming entrance exams in India like NEET, JEE and CUET. Check dates, eligibility and exam patterns with Admission Path 4u.",
+    "Stay updated on upcoming entrance exams in India like NEET, JEE and CUET. Check dates, eligibility and exam patterns with Admission Path4u.",
   alternates: { canonical: "/exams" },
 };
 

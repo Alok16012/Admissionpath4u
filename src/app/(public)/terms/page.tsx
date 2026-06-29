@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Terms of Service | Admission Path 4u",
+  title: "Terms of Service | Admission Path4u",
   description:
-    "Terms of Service for Admission Path 4u. Please read these terms carefully before using our website.",
+    "Terms of Service for Admission Path4u. Please read these terms carefully before using our website.",
 };
 
 export default function TermsPage() {
@@ -14,7 +14,7 @@ export default function TermsPage() {
 
       <div className="prose prose-gray max-w-none">
         <p className="lead text-lg text-gray-700 mb-6">
-          Welcome to **Admission Path 4u**. By accessing or using our website,
+          Welcome to **Admission Path4u**. By accessing or using our website,
           you agree to be bound by these Terms of Service. If you disagree with
           any part of these terms, you may not access the service.
         </p>
@@ -43,7 +43,7 @@ export default function TermsPage() {
           <p className="text-gray-600">
             All content included on this site, such as text, graphics, logos,
             button icons, images, audio clips, digital downloads, data
-            compilations, and software, is the property of Admission Path 4u or
+            compilations, and software, is the property of Admission Path4u or
             its content suppliers and protected by international copyright laws.
           </p>
         </section>
@@ -65,7 +65,7 @@ export default function TermsPage() {
             4. Limitation of Liability
           </h2>
           <p className="text-gray-600">
-            In no event shall Admission Path 4u, nor its directors, employees,
+            In no event shall Admission Path4u, nor its directors, employees,
             partners, agents, suppliers, or affiliates, be liable for any
             indirect, incidental, special, consequential or punitive damages,
             including without limitation, loss of profits, data, use, goodwill,

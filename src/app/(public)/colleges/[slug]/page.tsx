@@ -14,7 +14,7 @@ export async function generateMetadata(props: {
   const title = `${college.name} — Courses, Fees & Placements`;
   const description = metaDescription(
     college.description,
-    `${college.name}, ${college.city}, ${college.state}. Check courses, fees and placements, and apply online with Admission Path 4u.`
+    `${college.name}, ${college.city}, ${college.state}. Check courses, fees and placements, and apply online with Admission Path4u.`
   );
   return {
     title,

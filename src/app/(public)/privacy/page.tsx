@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Privacy Policy | Admission Path 4u",
+  title: "Privacy Policy | Admission Path4u",
   description:
-    "Privacy Policy for Admission Path 4u. Learn how we collect, use, and protect your personal information.",
+    "Privacy Policy for Admission Path4u. Learn how we collect, use, and protect your personal information.",
 };
 
 export default function PrivacyPage() {
@@ -14,7 +14,7 @@ export default function PrivacyPage() {
 
       <div className="prose prose-gray max-w-none">
         <p className="lead text-lg text-gray-700 mb-6">
-          At **Admission Path 4u**, we value your privacy and are committed to
+          At **Admission Path4u**, we value your privacy and are committed to
           protecting your personal data. This Privacy Policy explains how we
           collect, use, disclosure, and safeguard your information when you
           visit our website.
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
             contact us at:
           </p>
           <div className="bg-gray-50 p-6 rounded-lg border border-gray-100">
-            <p className="font-semibold text-gray-900">Admission Path 4u</p>
+            <p className="font-semibold text-gray-900">Admission Path4u</p>
             <p className="text-gray-600">GF-090, Migsun Galleria, Sector 27</p>
             <p className="text-gray-600">
               Greater Noida, Uttar Pradesh - 201306

@@ -4,10 +4,10 @@ export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://admissionpath4u.com"
 ).replace(/\/$/, "");
 
-export const SITE_NAME = "Admission Path 4u";
+export const SITE_NAME = "Admission Path4u";
 
 export const SITE_DESCRIPTION =
-  "Admission Path 4u helps you find your dream college in India. Compare fees, placements, and courses, get personalized college recommendations, and apply online.";
+  "Admission Path4u helps you find your dream college in India. Compare fees, placements, and courses, get personalized college recommendations, and apply online.";
 
 /** Build an absolute URL from a path. */
 export function absoluteUrl(path = "/"): string {

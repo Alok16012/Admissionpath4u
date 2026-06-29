@@ -96,7 +96,7 @@ export default async function BlogDetailsPage(props: {
       </article>
 
       <div className="mt-16 pt-8 border-t">
-        <h3 className="text-2xl font-bold mb-6">More from Admission Path 4u</h3>
+        <h3 className="text-2xl font-bold mb-6">More from Admission Path4u</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-[#27465B] text-white p-6 rounded-xl">
             <h4 className="font-bold text-xl mb-2">Find Top Colleges</h4>

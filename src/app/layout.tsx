@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "Find Best Colleges in India",
-    template: "%s | Admission Path 4u",
+    template: "%s | Admission Path4u",
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     },
   },
   keywords: [
-    "Admission Path 4u",
+    "Admission Path4u",
     "college admission",
     "best colleges in India",
     "college finder",
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     "career guidance",
   ],
   openGraph: {
-    title: "Admission Path 4u - Find Best Colleges in India",
+    title: "Admission Path4u - Find Best Colleges in India",
     description:
-      "Find your dream college, compare fees and placements, and apply online with Admission Path 4u.",
+      "Find your dream college, compare fees and placements, and apply online with Admission Path4u.",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_IN",
@@ -58,9 +58,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Admission Path 4u - Find Best Colleges in India",
+    title: "Admission Path4u - Find Best Colleges in India",
     description:
-      "Find your dream college, compare fees and placements, and apply online with Admission Path 4u.",
+      "Find your dream college, compare fees and placements, and apply online with Admission Path4u.",
     images: ["/logo.png"],
   },
 };

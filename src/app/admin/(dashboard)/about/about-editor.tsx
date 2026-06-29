@@ -36,7 +36,7 @@ export function AboutEditor({ initialSettings }: AboutEditorProps) {
 
   const [mission, setMission] = useState(
     initialSettings?.aboutMission ||
-    "At Admission Path 4u, our mission is to democratize access to quality education information. We believe every student deserves to make informed decisions about their future, regardless of their background."
+    "At Admission Path4u, our mission is to democratize access to quality education information. We believe every student deserves to make informed decisions about their future, regardless of their background."
   );
   const [vision, setVision] = useState(
     initialSettings?.aboutVision ||

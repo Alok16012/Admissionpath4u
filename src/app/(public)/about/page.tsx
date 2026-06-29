@@ -3,9 +3,9 @@ import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 
 export const metadata = {
-  title: "About Us | Admission Path 4u",
+  title: "About Us | Admission Path4u",
   description:
-    "Learn more about Admission Path 4u, our mission, and how we help students find their dream colleges.",
+    "Learn more about Admission Path4u, our mission, and how we help students find their dream colleges.",
 };
 
 export default function AboutPage() {
@@ -41,7 +41,7 @@ export default function AboutPage() {
                 Our Mission & Vision
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                At Admission Path 4u, our mission is to democratize access to
+                At Admission Path4u, our mission is to democratize access to
                 quality education information. We believe every student deserves
                 to make informed decisions about their future, regardless of
                 their background.
@@ -68,7 +68,7 @@ export default function AboutPage() {
         <div className="container px-4 md:px-6 mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-[#27465B] sm:text-4xl mb-4">
-              Why Choose Admission Path 4u?
+              Why Choose Admission Path4u?
             </h2>
             <p className="text-gray-600 text-lg">
               We bring expertise, transparency, and personalized guidance to

@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/contact-form";
 export const metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Admission Path 4u for free college admission guidance, scholarships and application support. Call +91 96505 01173.",
+    "Get in touch with Admission Path4u for free college admission guidance, scholarships and application support. Call +91 96505 01173.",
   alternates: { canonical: "/contact" },
 };
 

@@ -125,15 +125,14 @@ export function Navbar() {
           <Link href="/" className="flex shrink-0 items-center gap-2.5">
             <Image
               src="/logo.png"
-              alt="Admission Path 4u"
+              alt="Admission Path4u"
               width={200}
               height={60}
               className="h-12 w-auto md:h-14"
               priority
             />
             <span className="hidden text-lg font-extrabold leading-tight text-[#27465B] sm:inline-block">
-              Admission Path{" "}
-              <span className="text-[#BDA25F]">4u</span>
+              Admission Path<span className="text-[#BDA25F]">4u</span>
             </span>
           </Link>
 

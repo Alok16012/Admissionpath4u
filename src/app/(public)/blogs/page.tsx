@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 export const metadata = {
   title: "Education Blog — Admission Tips & College News",
   description:
-    "Read the latest admission tips, college news, exam updates and career guidance from Admission Path 4u.",
+    "Read the latest admission tips, college news, exam updates and career guidance from Admission Path4u.",
   alternates: { canonical: "/blogs" },
 };
 

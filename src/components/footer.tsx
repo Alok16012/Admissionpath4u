@@ -24,14 +24,14 @@ export function Footer() {
               <span className="inline-flex items-center justify-center rounded-lg bg-white p-1.5">
                 <Image
                   src="/logo.png"
-                  alt="Admission Path 4u"
+                  alt="Admission Path4u"
                   width={120}
                   height={40}
                   className="h-9 w-auto"
                 />
               </span>
               <span className="text-xl font-extrabold text-[#BDA25F]">
-                Admission Path 4u
+                Admission Path4u
               </span>
             </Link>
             <p className="text-white/70 leading-relaxed text-sm">
@@ -108,7 +108,7 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="bg-[#16242f] py-6 border-t border-white/10">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60">
-          <p>© {new Date().getFullYear()} Admission Path 4u. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Admission Path4u. All rights reserved.</p>
           <p>
             Developed by{" "}
             <Link

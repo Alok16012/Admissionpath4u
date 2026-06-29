@@ -15,7 +15,7 @@ export async function generateMetadata(props: {
   const title = `${exam.name} — Dates, Eligibility & Pattern`;
   const description = metaDescription(
     exam.description,
-    `${exam.name} exam details: important dates, eligibility, exam pattern and preparation guidance from Admission Path 4u.`
+    `${exam.name} exam details: important dates, eligibility, exam pattern and preparation guidance from Admission Path4u.`
   );
   return {
     title,

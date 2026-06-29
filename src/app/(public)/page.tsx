@@ -50,7 +50,7 @@ export default async function HomePage() {
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base text-gray-100/90 drop-shadow-sm sm:text-lg">
             {settings?.heroSubtitle ||
-              "Explore top colleges, entrance exams and scholarships — and apply with free expert guidance from Admission Path 4u."}
+              "Explore top colleges, entrance exams and scholarships — and apply with free expert guidance from Admission Path4u."}
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button

@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 export const metadata = {
   title: "Top Colleges & Universities in India",
   description:
-    "Browse top colleges and universities in India. Filter by course, state, fees and placements, and apply online with Admission Path 4u.",
+    "Browse top colleges and universities in India. Filter by course, state, fees and placements, and apply online with Admission Path4u.",
   alternates: { canonical: "/colleges" },
 };
 
