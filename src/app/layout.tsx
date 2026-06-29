@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, absoluteUrl } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,12 +15,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Find Best Colleges in India",
     template: "%s | Admission Path 4u",
   },
-  description:
-    "Admission Path 4u helps you find your dream college in India. Compare fees, placements, and courses, get personalized college recommendations, and apply online.",
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   keywords: [
     "Admission Path 4u",
     "college admission",
@@ -34,7 +50,9 @@ export const metadata: Metadata = {
     title: "Admission Path 4u - Find Best Colleges in India",
     description:
       "Find your dream college, compare fees and placements, and apply online with Admission Path 4u.",
-    siteName: "Admission Path 4u",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: "en_IN",
     type: "website",
     images: ["/logo.png"],
   },
@@ -52,11 +70,49 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
+        name: SITE_NAME,
+        url: SITE_URL,
+        logo: absoluteUrl("/logo.png"),
+        description: SITE_DESCRIPTION,
+        sameAs: [
+          "https://www.facebook.com/profile.php?id=61587842248462",
+          "https://www.instagram.com/admissionpath4u/",
+          "https://www.youtube.com/channel/UCvIQzIgTENnGijRQWTReqTg",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        name: SITE_NAME,
+        url: SITE_URL,
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${SITE_URL}/colleges?search={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+    ],
+  };
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         <Toaster />
       </body>

@@ -6,6 +6,13 @@ import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
+export const metadata = {
+  title: "Top Colleges & Universities in India",
+  description:
+    "Browse top colleges and universities in India. Filter by course, state, fees and placements, and apply online with Admission Path 4u.",
+  alternates: { canonical: "/colleges" },
+};
+
 export default async function CollegesPage(props: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {

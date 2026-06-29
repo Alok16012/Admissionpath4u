@@ -1,7 +1,33 @@
+import type { Metadata } from "next";
 import { getCollegeBySlug } from "@/app/actions/public";
 import { notFound } from "next/navigation";
 import { MapPin, BookOpen, IndianRupee } from "lucide-react";
 import { ContactDialog } from "@/components/contact-dialog";
+import { metaDescription } from "@/lib/seo";
+
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await props.params;
+  const college = await getCollegeBySlug(slug);
+  if (!college) return { title: "College Not Found" };
+  const title = `${college.name} — Courses, Fees & Placements`;
+  const description = metaDescription(
+    college.description,
+    `${college.name}, ${college.city}, ${college.state}. Check courses, fees and placements, and apply online with Admission Path 4u.`
+  );
+  return {
+    title,
+    description,
+    alternates: { canonical: `/colleges/${slug}` },
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      images: college.images?.[0] ? [college.images[0]] : ["/logo.png"],
+    },
+  };
+}
 
 export default async function CollegeDetailPage(props: {
   params: Promise<{ slug: string }>;

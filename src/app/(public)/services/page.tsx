@@ -25,6 +25,13 @@ const STATIC_SERVICES = [
 
 export const dynamic = "force-dynamic";
 
+export const metadata = {
+  title: "Our Services — College Finder, Scholarships & Loans",
+  description:
+    "Explore Admission Path 4u services: College Finder, scholarship programs, application support, education loans, campus achiever and re-admission help.",
+  alternates: { canonical: "/services" },
+};
+
 export default async function ServicesPage() {
   const dbServices = await getServices();
   const services = dbServices.length > 0 ? dbServices : STATIC_SERVICES;

@@ -1,8 +1,29 @@
+import type { Metadata } from "next";
 import { getExamBySlug } from "@/app/actions/public";
 import { notFound } from "next/navigation";
 import { Calendar, Monitor, Users, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { metaDescription } from "@/lib/seo";
+
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await props.params;
+  const exam = await getExamBySlug(slug);
+  if (!exam) return { title: "Exam Not Found" };
+  const title = `${exam.name} — Dates, Eligibility & Pattern`;
+  const description = metaDescription(
+    exam.description,
+    `${exam.name} exam details: important dates, eligibility, exam pattern and preparation guidance from Admission Path 4u.`
+  );
+  return {
+    title,
+    description,
+    alternates: { canonical: `/exams/${slug}` },
+    openGraph: { title, description, type: "article", images: ["/logo.png"] },
+  };
+}
 
 export default async function ExamDetailsPage(props: {
   params: Promise<{ slug: string }>;

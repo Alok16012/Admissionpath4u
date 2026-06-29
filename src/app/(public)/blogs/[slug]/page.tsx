@@ -1,9 +1,33 @@
+import type { Metadata } from "next";
 import { getBlogBySlug } from "@/app/actions/public";
 import { notFound } from "next/navigation";
 import { Calendar, User, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { metaDescription, absoluteUrl } from "@/lib/seo";
+
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await props.params;
+  const blog = await getBlogBySlug(slug);
+  if (!blog) return { title: "Article Not Found" };
+  const description = metaDescription(blog.excerpt || blog.content);
+  return {
+    title: blog.title,
+    description,
+    alternates: { canonical: `/blogs/${slug}` },
+    openGraph: {
+      title: blog.title,
+      description,
+      type: "article",
+      publishedTime: blog.createdAt,
+      authors: blog.author ? [blog.author] : undefined,
+      images: blog.main_image ? [blog.main_image] : ["/logo.png"],
+    },
+  };
+}
 
 export default async function BlogDetailsPage(props: {
   params: Promise<{ slug: string }>;

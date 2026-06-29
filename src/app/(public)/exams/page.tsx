@@ -5,6 +5,13 @@ import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
+export const metadata = {
+  title: "Upcoming Entrance Exams in India — Dates & Eligibility",
+  description:
+    "Stay updated on upcoming entrance exams in India like NEET, JEE and CUET. Check dates, eligibility and exam patterns with Admission Path 4u.",
+  alternates: { canonical: "/exams" },
+};
+
 export default async function ExamsPage(props: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {

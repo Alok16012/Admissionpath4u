@@ -5,6 +5,13 @@ import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
+export const metadata = {
+  title: "Education Blog — Admission Tips & College News",
+  description:
+    "Read the latest admission tips, college news, exam updates and career guidance from Admission Path 4u.",
+  alternates: { canonical: "/blogs" },
+};
+
 export default async function BlogsPage(props: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
