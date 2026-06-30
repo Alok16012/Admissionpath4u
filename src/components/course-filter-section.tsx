@@ -41,27 +41,34 @@ const iconMap: { [key: string]: any } = {
   Aviation: Plane,
   Veterinary: Dog,
   "Hotel Management": Hotel,
+  // Actual DB course names
+  "B.Tech": Settings,
+  "B.E": Settings,
+  "M.Tech": Settings,
+  MBA: Briefcase,
+  BBA: Briefcase,
+  BCA: Monitor,
+  MCA: Monitor,
+  "B.Arch": Building2,
+  "B.Com": BarChart3,
+  "Ph.D": GraduationCap,
 };
 
-// Preferred display order (mirrors the reference layout). Any course not
-// listed here keeps its original position after these, so the DB stays the
-// source of truth for *which* streams exist — we only control the ordering.
+// Preferred display order for the stream pills. These match the actual course
+// names stored in the DB (each college's "Courses" field in admin). Any course
+// not listed here keeps its position after these, so the DB stays the source of
+// truth for *which* streams exist — we only control the ordering here.
 const STREAM_ORDER = [
-  "Management",
-  "Engineering",
-  "Art",
-  "Arts",
-  "Law",
-  "Medical",
-  "MBBS",
-  "Dental",
-  "Travel",
-  "Computer",
-  "Computer Applications",
-  "Animation",
-  "Aviation",
-  "Veterinary",
-  "Hotel Management",
+  "B.Tech",
+  "B.E",
+  "M.Tech",
+  "MBA",
+  "BBA",
+  "BCA",
+  "MCA",
+  "B.Arch",
+  "B.Com",
+  "Ph.D",
 ];
 
 function orderCourses(courses: string[]): string[] {
