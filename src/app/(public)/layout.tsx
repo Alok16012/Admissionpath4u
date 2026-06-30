@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { LeadPopup } from "@/components/lead-popup";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 
 export default function PublicLayout({
   children,
@@ -13,6 +14,7 @@ export default function PublicLayout({
       <main className="flex-1">{children}</main>
       <Footer />
       <LeadPopup />
+      <WhatsAppButton />
     </div>
   );
 }

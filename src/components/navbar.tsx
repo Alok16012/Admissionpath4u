@@ -58,7 +58,7 @@ export function Navbar() {
   };
 
   return (
-    <div className="w-full flex flex-col font-sans">
+    <div className="sticky top-0 z-50 w-full flex flex-col font-sans">
       {/* Top utility bar */}
       <div className="hidden md:block bg-[#27465B] text-white">
         <div className="container mx-auto flex h-10 items-center justify-between px-6 text-xs">
@@ -119,7 +119,7 @@ export function Navbar() {
       </div>
 
       {/* Main header */}
-      <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur shadow-sm">
+      <header className="w-full border-b border-gray-100 bg-white/95 backdrop-blur shadow-sm">
         <div className="container mx-auto flex h-20 items-center justify-between gap-4 px-6">
           {/* Logo */}
           <Link href="/" className="flex shrink-0 items-center gap-2.5">
