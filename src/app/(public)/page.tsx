@@ -1,25 +1,35 @@
 import Link from "next/link";
 import {
   getUniqueCourses,
-  getTopColleges,
   getRecentExams,
   getRecentBlogs,
   getServices,
+  getDirectoryColleges,
+  getUniqueStates,
 } from "@/app/actions/public";
 import { getSiteSettings } from "@/app/actions/settings";
-import { CollegeCard } from "@/components/college-card";
 import { ExamCard } from "@/components/exam-card";
 import { BlogCard } from "@/components/blog-card";
 import { Button } from "@/components/ui/button";
 import { BannerCarousel } from "@/components/banner-carousel";
 import { CourseFilterSection } from "@/components/course-filter-section";
 import { ServicesSection } from "@/components/services-section";
+import { CollegeDirectorySection } from "@/components/college-directory-section";
 
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const [topColleges, recentExams, recentBlogs, courses, services, settings] = await Promise.all([
-    getTopColleges(),
+  const [
+    directoryColleges,
+    states,
+    recentExams,
+    recentBlogs,
+    courses,
+    services,
+    settings,
+  ] = await Promise.all([
+    getDirectoryColleges(),
+    getUniqueStates(),
     getRecentExams(),
     getRecentBlogs(),
     getUniqueCourses(),
@@ -113,42 +123,12 @@ export default async function HomePage() {
 
       <ServicesSection services={services} />
 
-      {/* State Filter Section Removed as per user request flow, but available in codebase if needed. 
-          Actually user didn't ask to remove it, but user prompt "Next section should look like..." implied linear flow.
-          Wait, previous prompt added State Filter. This prompt says "Perfect now improve the design of featured college... Then in next section show 3 exams...".
-          I kept ServicesSection. Assuming StateFilter was requested previously, I should probably leave it or move it if flow demands. 
-          I will keep State Filter if it's there (it was removed in previous turn by user edit? No, user edit REMOVED StateFilterSection from imports and JSX. So I will NOT include it).
-      */}
-
-      {/* Top Colleges Section */}
-      <section className="py-12 bg-gray-50 md:py-14">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-[#27465B]">
-                Top <span className="text-[#BDA25F]">Placements</span>
-              </h2>
-              <p className="text-gray-500 mt-2">
-                Colleges with highest salary packages
-              </p>
-            </div>
-            <Button variant="link" asChild className="text-[#27465B]">
-              <Link href="/colleges">View All</Link>
-            </Button>
-          </div>
-          {topColleges.length > 0 ? (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {topColleges.map((college: any) => (
-                <CollegeCard key={college._id} college={college} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12 text-muted-foreground">
-              No colleges found.
-            </div>
-          )}
-        </div>
-      </section>
+      {/* Top Colleges / Universities — filterable directory (admin managed) */}
+      <CollegeDirectorySection
+        colleges={directoryColleges}
+        states={states}
+        courses={courses}
+      />
 
       {/* Top Exams Section */}
       <section className="py-12 bg-white md:py-14">

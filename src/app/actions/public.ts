@@ -120,6 +120,25 @@ export async function getTopColleges() {
     return (data || []).map(toCollege);
 }
 
+// Colleges for the homepage "Top Colleges / Universities" filterable directory.
+// All filtering happens client-side, so we hand over a generous slice ordered
+// by placement strength. Managed entirely from the admin Colleges panel.
+export async function getDirectoryColleges() {
+    const { data, error } = await supabase
+        .from('colleges')
+        .select('*')
+        .order('highest_package', { ascending: false, nullsFirst: false })
+        .limit(60);
+    if (error) return [];
+    return (data || []).map(toCollege).filter((c): c is NonNullable<typeof c> => c !== null);
+}
+
+export async function getUniqueStates() {
+    const { data, error } = await supabase.from('colleges').select('state');
+    if (error || !data) return [];
+    return [...new Set(data.map((row: any) => row.state).filter(Boolean))].sort();
+}
+
 export async function getRecentExams() {
     const { data, error } = await supabase
         .from('exams')
