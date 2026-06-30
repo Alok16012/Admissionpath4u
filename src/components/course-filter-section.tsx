@@ -43,12 +43,46 @@ const iconMap: { [key: string]: any } = {
   "Hotel Management": Hotel,
 };
 
+// Preferred display order (mirrors the reference layout). Any course not
+// listed here keeps its original position after these, so the DB stays the
+// source of truth for *which* streams exist — we only control the ordering.
+const STREAM_ORDER = [
+  "Management",
+  "Engineering",
+  "Art",
+  "Arts",
+  "Law",
+  "Medical",
+  "MBBS",
+  "Dental",
+  "Travel",
+  "Computer",
+  "Computer Applications",
+  "Animation",
+  "Aviation",
+  "Veterinary",
+  "Hotel Management",
+];
+
+function orderCourses(courses: string[]): string[] {
+  const rank = (course: string) => {
+    const i = STREAM_ORDER.indexOf(course);
+    return i === -1 ? STREAM_ORDER.length : i;
+  };
+  return [...courses].sort((a, b) => {
+    const diff = rank(a) - rank(b);
+    return diff !== 0 ? diff : a.localeCompare(b);
+  });
+}
+
 interface CourseFilterSectionProps {
   courses: string[];
 }
 
 export function CourseFilterSection({ courses }: CourseFilterSectionProps) {
   if (!courses || courses.length === 0) return null;
+
+  const orderedCourses = orderCourses(courses);
 
   return (
     <section className="bg-gray-50 py-12 md:py-14">
@@ -63,7 +97,7 @@ export function CourseFilterSection({ courses }: CourseFilterSectionProps) {
         </div>
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-          {courses.map((course) => {
+          {orderedCourses.map((course) => {
             const Icon = iconMap[course] || GraduationCap;
 
             return (
